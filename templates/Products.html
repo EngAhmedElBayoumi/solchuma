@@ -1,0 +1,125 @@
+{% extends 'base.html' %}
+{% load static %}
+<!---extends base.html -->
+
+{% block style %}
+
+{% endblock %}
+
+{% block body %}
+        
+     
+        <!--Page Title-->
+        <section class="page-title" style="background-image:url(images/new/bg1.jpg)">
+            <div class="auto-container">
+                 <ul class="page-breadcrumb">
+                    <li><a href="{% url 'home:home' %}">home</a></li>
+                    <li>Products</li>
+                </ul>
+                <h2>SolChem Products</h2>
+               
+            </div>
+        </section>
+        <!--End Page Title-->
+
+
+        
+        <div class="ProductsPage">
+            <div class="auto-container">
+                <div class="product_info_tabs">
+
+                    {% if subcategories %}
+                    <div class="prodcs_tabs tabs-box">
+                        <!-- Tab Btns -->
+                        <ul class="tab-btns tab-buttons clearfix">
+                            {% for subcategory in subcategories %}
+                                <li data-tab="prod-{{ subcategory.title }}" class="tab-btn {% if forloop.first %}active-btn{% endif %}">{{ subcategory.title }}</li>
+                            {% endfor %}
+                        </ul>
+                    
+                        <!-- Tabs Container -->
+                        <div class="tabs-content">
+                            {% for subcategory in subcategories %}
+                                {% if subcategory.product_set.all %}
+                                <div class="tab {% if forloop.first %}active-tab{% endif %}" id="prod-{{ subcategory.title }}">
+                                    <div class="ProductList">
+                                        <div class="row">
+                                            {% for product in subcategory.product_set.all %}
+                                                <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+                                                    <div class="ProductItem">
+                                                        <a href="{% url 'products:product_details' product.id %}">
+                                                            <div class="imageProd">
+                                                                <img src="{{ product.images.first.image.url }}">
+                                                            </div>
+                                                            <div class="ProductName">
+                                                                <h3>{{ product.title }}</h3>
+                                                            </div>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            {% endfor %}
+                                        </div>
+                                    </div>
+                                </div>
+                                {% else %}
+                                    <div class="alert alert-danger">
+                                        <h3 class="text-center">No Products Found</h3>
+                                    </div>
+                                {% endif %}
+                            {% endfor %}
+                        </div>
+                    </div>
+                    {% else %}
+                        <div class="alert alert-danger">
+                            <h3 class="text-center">No Products Found</h3>
+                        </div>
+                    {% endif %}
+                    
+                </div>
+            </div>
+        </div>
+                             
+           
+        
+ 
+        
+        
+
+        {% block script %}
+        <!-- Initialize Swiper -->
+        <script>
+            var swiper = new Swiper(".mySwiper", {
+            direction: "vertical",
+            slidesPerView: 1,
+              speed: 1000,
+            spaceBetween: 0,
+            mousewheel: true,
+              autoplay:false,
+            pagination: {
+              el: ".swiper-pagination",
+              clickable: true,
+            },
+            });
+            </script>
+
+            <script>
+                $(document).ready(function () {
+                    // active btn
+                    $(".tab-btn").click(function () {
+                        $(".tab-btn").removeClass("active-btn");
+                        $(this).addClass("active-btn");
+                    });
+                    // active tab
+                    $(".tab-btn").click(function () {
+                        var tab_id = $(this).attr("data-tab");
+
+                        $(".tab").removeClass("active-tab");
+                        $("#" + tab_id).addClass("active-tab");
+                    });
+                });
+            </script>
+
+        {% endblock %}
+        
+        
+        {% endblock %}

@@ -1,0 +1,115 @@
+{% extends 'base.html' %}
+{% load static %}
+<!---extends base.html -->
+{% block style %}
+
+{% endblock %}
+
+{% block body %}
+
+        
+     
+        <!--Page Title-->
+        <section class="page-title" style="background-image:url(images/new/bg1.jpg)">
+            <div class="auto-container">
+                 <ul class="page-breadcrumb">
+                    <li><a href="{% url 'home:home' %}">home</a></li>
+                    <li>Sustainability</li>
+                </ul>
+                <h2>Governance</h2>
+               
+            </div>
+        </section>
+        <!--End Page Title-->
+
+
+        <!-- About Section -->
+        <section class="about-section ESGPage">
+            <div class="auto-container">
+                <div class="row">
+                    <!-- Content Column -->
+                    <div class="content-column col-lg-6 col-md-6 col-sm-12 d-flex align-items-center">
+                        <div class="inner-column">
+                            <div class="LinksUrlUper">
+                                <ul>
+                                    <li><a href="{% url 'sustainability:esg_environment' %}" class="">Envronmental</a></li>
+                                    <li><a href="{% url 'sustainability:esg_social' %}" class="">Social</a></li>
+                                    <li><a href="{% url 'sustainability:esg_governance' %}" class="active">Governance</a></li>
+                                </ul>
+                            </div>
+                            <div class="text-box">
+                                <div class="sec-title mb-3">
+                                    <h2>{{governace.first.title}}</h2>
+                                </div>
+                                <div class="text">
+                                    <p>{{governace.first.description}}</p>
+                                </div>
+                            </div>
+                            <div class="reportsts">
+                                <div class="reportsItems">
+                                    <div class="row">
+                                        {% for gov in governace.first.pdf.all %}
+                                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                            <div class="itemReport">
+                                                <a href="{{gov.pdf.url}}">{{gov.title}}</a>
+                                            </div>
+                                        </div>
+                                        {% endfor %}
+                                       
+                                    </div>
+                                </div>
+                                
+                            </div>
+                         
+                          
+                        </div>
+                    </div>
+
+                    <!-- Image Column -->
+                    <div class="image-column col-lg-6 col-md-6 col-sm-12">
+                        <div class="inner-column">
+                            <div class="image-box">
+                                <img src="{{governace.first.image.url}}">
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </section>
+        <!--End About Section -->
+        
+ 
+        
+        
+
+        
+        
+        
+        
+        
+        
+        
+        
+        
+   
+{% block script %}
+<!-- Initialize Swiper -->
+<script>
+    var swiper = new Swiper(".mySwiper", {
+    direction: "vertical",
+    slidesPerView: 1,
+      speed: 1000,
+    spaceBetween: 0,
+    mousewheel: true,
+      autoplay:false,
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+    });
+    </script>
+{% endblock %}
+
+
+{% endblock %}

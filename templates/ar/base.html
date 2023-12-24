@@ -1,0 +1,296 @@
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="utf-8">
+<title>صول كيم</title>
+<!-- Stylesheets -->
+<link href="{% static 'css/bootstrap.css' %}" rel="stylesheet">
+<link href="{% static 'Libs/select2/css/select2.min.css' %}" rel="stylesheet">
+<link href="{% static 'css/style.css' %}" rel="stylesheet">
+<link href="{% static 'css/style_Rtl.css' %}" rel="stylesheet">
+<link href="{% static 'css/responsive.css' %}" rel="stylesheet">
+
+<link rel="icon" href="{% static 'images/new/logoicon.png' %}" type="image/x-icon">
+
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;500;600;700;800;900;1000&display=swap" rel="stylesheet">
+<!-- Responsive -->
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+{% block style %}
+
+{% endblock %}
+</head>
+
+<body>
+
+<div class="page-wrapper">
+    <!-- Preloader -->
+    <div class="preloader"></div>
+
+    <!-- Sidenav Bar -->
+    <section class="sidenav-bar">
+        <div class="nav-box">
+            <div class="inner-box">
+                <div class="upper-box">
+                    <div class="btn-box"><button class="close-btn"><span class="fa fa-times"></span></button></div>
+                </div>
+
+                <!-- .Side Nav -->
+                <nav class="side-nav">
+                    <ul class="navigation clearfix" id="nav">
+                        <li class="current"><a href="{% url 'home:home_ar' %}"> الرئيسية </a>
+                        <li class=" dropdown"><a> حول </a>
+                            <ul>
+                                <li><a href="{% url 'about:about_sipchem_ar' %}">عن صول كيم</a></li>
+                                <li><a href="{% url 'about:affiliates_ar' %}">الشركات التابعة</a></li>
+                                <li><a href="{% url 'about:leadership_ar' %}">القيادة</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="dropdown"><a>المنتجات</a>
+                            <ul>
+                                {% for category in all_categories %}
+                                <li><a href="{% url 'products:products_by_category_ar' category.id %}">{{category.title_ar}}</a></li>
+                                {% endfor %}
+                            </ul>
+                        </li>
+                        <li><a href="{% url 'suppliers:subliers_ar' %}"> الموردون </a></li>
+                        <li class="dropdown"><a>الاستدامة</a>
+                            <ul>
+                                <li><a href="{% url 'sustainability:esg_environment_ar' %}">البيئة، المجتمع والحوكمة</a></li>
+                                <li><a href="{% url 'sustainability:csr_ar' %}">برامج المسؤولية المجتمعية للشركات</a></li>
+                                <li><a href="{% url 'sustainability:sustainability_reports_ar' %}">تقارير الاستدامة</a></li>
+                                <li><a href="{% url 'sustainability:certifications_ar' %}">الشهادات</a></li>
+                                <li><a href="{% url 'sustainability:certifications_ar' %}">نظام الإدارة المتكاملة</a></li>
+
+                            </ul>
+                        </li>
+                        <li class="dropdown"><a>الابتكار </a>
+                            <ul>
+                                <li><a href="{% url 'innovation:digital_transformation_ar' %}">التحول الرقمي</a></li>
+                                <li><a href="{% url 'innovation:research_and_development_ar' %}">البحث والتطوير</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="{% url 'contact:contact_ar'  %}"> اتصل بنا </a></li>
+                    </ul> 
+                </nav><!-- /.Side-menu -->
+            </div>
+        </div>
+    </section>
+    <!--End Sidenav Bar -->
+
+    <!-- Start Main Content -->
+    <main id="content">
+
+        <!-- Main Header-->
+        <header class="main-header header-style-two">
+            <div class="outer-container">
+                <div class="main-box clearfix">
+                    <div class="logo-box">
+                        <div class="logo"><a href="{% url 'home:home_ar' %}"><img src="{% static 'images/new/logo.png' %}" alt="" title=""></a></div>
+                    </div>
+
+                    <div class="nav-outer">
+
+                        <!-- Main Menu -->
+                        <nav class="main-menu navbar-expand-md navbar-light">
+                            <div class="collapse navbar-collapse clearfix" id="navbarSupportedContent">
+                                <ul class="navigation clearfix">
+                                    <li class="current"><a href="{% url 'home:home_ar' %}"> الرئيسية </a>
+                        <li class=" dropdown"><a> حول </a>
+                            <ul>
+                                <li><a href="{% url 'about:about_sipchem_ar' %}">عن صول كيم</a></li>
+                                <li><a href="{% url 'about:affiliates_ar' %}">الشركات التابعة</a></li>
+                                <li><a href="{% url 'about:leadership_ar' %}">القيادة</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="dropdown"><a>المنتجات</a>
+                            <ul>
+                                {% for category in all_categories %}
+                                <li><a href="{% url 'products:products_by_category_ar' category.id %}">{{category.title_ar}}</a></li>
+                                {% endfor %}
+                            </ul>
+                        </li>
+                        <li><a href="{% url 'suppliers:subliers_ar' %}"> الموردون </a></li>
+                        <li class="dropdown"><a>الاستدامة</a>
+                            <ul>
+                                <li><a href="{% url 'sustainability:esg_environment_ar' %}">البيئة، المجتمع والحوكمة</a></li>
+                                <li><a href="{% url 'sustainability:csr_ar' %}">برامج المسؤولية المجتمعية للشركات</a></li>
+                                <li><a href="{% url 'sustainability:sustainability_reports_ar' %}">تقارير الاستدامة</a></li>
+                                <li><a href="{% url 'sustainability:certifications_ar' %}">الشهادات</a></li>
+                                <li><a href="{% url 'sustainability:certifications_ar' %}">نظام الإدارة المتكاملة</a></li>
+
+                            </ul>
+                        </li>
+                        <li class="dropdown"><a>الابتكار </a>
+                            <ul>
+                                <li><a href="{% url 'innovation:digital_transformation_ar' %}">التحول الرقمي</a></li>
+                                <li><a href="{% url 'innovation:research_and_development_ar' %}">البحث والتطوير</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="{% url 'contact:contact_ar'  %}"> اتصل بنا </a></li>
+                                </ul> 
+
+                            </div>
+                        </nav>
+                        <!-- Main Menu End-->
+
+                        <div class="outer-box clearfix">
+                           <div class="language">
+                                        <a title="AR" onclick="change_language()" >EN <span></span></a>
+                                    </div>
+                            <!-- Btn box -->
+                            <div class="btn-box no-touch"><button class="nav-toggler"><span></span></button></div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!--End Main Header -->
+
+        {% block body %}
+
+        {% endblock %}
+
+        <div class="swiper-slide">
+            
+            
+			<!-- ============================ Footer Start ================================== -->
+			<footer class="skin-light-footer style-2">
+                
+                <div class="overlay">
+                    <div class="footer-middle">
+					<div class="auto-container">
+						<div class="row">
+							
+							<div class="col-lg-4 col-md-5">
+								<div class="footer_widget">
+									<img src="{% static 'images/new/logo.png' %}" class="img-footer small mb-2" alt="" />
+									<p>احصل على التحديثات والصفقات الساخنة والبرامج التعليمية والخصومات المرسلة مباشرة في صندوق الوارد الخاص بك كل شهر</p>
+									
+								</div>
+							</div>
+							
+							<div class="col-lg-8 col-md-7 ml-auto">
+								<div class="row">
+								
+									<div class="col-lg-4 col-md-4">
+										<div class="footer_widget">
+											<h4 class="widget_title">المركز الإعلامي</h4>
+											<ul class="footer-menu">
+												<li><a href="{% url 'news:news_ar' %}">الأخبار</a></li>
+                                            <li><a href="{% url 'gallary:gallary_ar' %}">معرض الوسائط</a></li>
+                                            <li><a href="{% url 'journalist:journalist_registration_ar' %}">التسجيل الصحفي</a></li>
+											</ul>
+										</div>
+									</div>
+											
+									<div class="col-lg-4 col-md-4">
+										<div class="footer_widget">
+											<h4 class="widget_title">اهم اللينكات</h4>
+											<ul class="footer-menu" style="column-count: 2;">
+												<li><a href="{% url 'home:home_ar' %}"> الرئيسية </a></li>
+                                            <li><a href="{% url 'about:about_sipchem_ar' %}"> حول  </a></li>
+                                            <li><a href="{% url 'suppliers:subliers_ar' %}">  الموردون  </a></li>
+                                            <li><a href="{% url 'sustainability:esg_environment_ar' %}"> الاستدامة </a></li>
+                                            <li><a href="{% url 'innovation:digital_transformation_ar' %}"> الابتكار   </a></li>
+                                            <li><a href="{% url 'contact:contact_ar'  %}">  اتصل بنا   </a></li>
+											</ul>
+										</div>
+									</div>
+							
+									<div class="col-lg-4 col-md-4">
+										<div class="footer_widget">
+											<h4 class="widget_title">الشروط & الخصوصيات</h4>
+											<ul class="footer-menu">
+												<li><a href="{% url 'home:policy_ar' %}">ممارسات الخصوصية</a></li> 
+                                                <li><a href="{% url 'home:policy_ar' %}">البنود و الظروف</a></li>
+											</ul>
+										</div>
+									</div>
+									
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				
+                </div>
+                
+				
+				<div class="footer-bottom br_light">
+					<div class="auto-container">
+						<div class="row align-items-center">
+							<div class="col-lg-12 col-md-12 text-center">
+								<p class="mb-0">© حقوق الطبع والنشر 2023 SOL CHEM جميع الحقوق محفوظة.</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</footer>
+			<!-- ============================ Footer End ================================== -->
+        
+        </div>
+    </div>
+    <div class="swiper-pagination"></div>
+</div>
+        
+        
+  
+
+
+
+        
+        
+                             
+    </main>
+    <!-- End Main Content -->
+</div>
+
+
+<div class="scroll-to-top scroll-to-target" data-target="html"><span class="fa fa-angle-up"></span></div>
+
+    <script src="{% static 'js/jquery.js' %}"></script> 
+    <script src="{% static 'js/popper.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
+    <script src="{% static 'js/owl.js' %}"></script>
+    <script src="{% static 'js/wow.js' %}"></script>
+    <script src="{% static 'Libs/select2/js/select2.min.js' %}"></script>
+        <script src="{% static 'Libs/select2/form-advanced.init.js' %}"></script>
+    <script src="{% static 'js/appear.js' %}"></script>
+    
+    <script src="{% static 'js/jquery.fancybox.js' %}"></script>
+    
+    <script src="{% static 'js/jquery.mCustomScrollbar.concat.min.js' %}"></script>
+    <script src="{% static 'js/swiper.min.js' %}"></script>
+    <script src="{% static 'js/jquery.stellar.min.js' %}"></script>
+    <script src="{% static 'js/TweenMax.min.js' %}"></script>
+    <script src="{% static 'js/script.js' %}"></script>
+
+    <script>
+         function change_language(){
+            // get url 
+            var url = window.location.href;
+            // replace ar with en
+            var new_url = url.replace('/ar/', '/en/');
+            // redirect to new url
+            window.location.href = new_url;
+            
+        }
+
+    </script>
+    
+    {% block script %}
+
+    {% endblock %}
+    
+
+</body>
+
+</html>

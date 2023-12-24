@@ -1,0 +1,228 @@
+{% extends 'ar/base.html' %}
+{% load static %}
+
+
+{% block style %}
+    <!-- Demo styles -->
+    <style>
+
+        .swiper {
+          width: 100%;
+          height: 100vh;
+        }
+  
+        .swiper-slide {
+          text-align: start;
+          font-size: 18px;
+          background: #fff;
+  
+          /* Center slide text vertically */
+          display: -webkit-box;
+          display: -ms-flexbox;
+          display: -webkit-flex;
+          display: block;
+          -webkit-box-pack: center;
+          -ms-flex-pack: center;
+          -webkit-justify-content: center;
+          justify-content: center;
+          -webkit-box-align: center;
+          -ms-flex-align: center;
+          -webkit-align-items: center;
+          align-items: center;
+            overflow: hidden;
+        }
+  
+        .swiper-slide img {
+          display: block;
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+          .nav-toggler span{
+              background-color: #006870;
+          }
+      </style>
+{% endblock %}
+{% block body %}
+        
+
+
+        
+     
+        <!--Page Title-->
+        <section class="page-title" style="background-image:url(images/new/bg1.jpg)">
+            <div class="auto-container">
+                 <ul class="page-breadcrumb">
+                    <li><a href="index.html">الرئيسية</a></li>
+                    <li>المركز الإعلامي</li>
+                </ul>
+                <h2>الأخبار</h2>
+            </div>
+        </section>
+        <!--End Page Title-->
+
+        <div class="NewsPage">
+            <div class="auto-container">
+                <div class="NewsSearch">
+                    <h2>اخبار صول كيم</h2>
+                    <form>
+                        <input type="text" placeholder="أدخل كلمة البحث هنا">
+                        <button type="submit">بحث</button>
+                    </form>
+                </div>
+                
+                <div class="row">
+                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                        <div class="NewssItem">
+                            <div class="image">
+                                <img src="{% static 'images/new/D0103560.jpg' %}">
+                            </div>
+                            <div class="NwsDatat">
+                                <p>18 May 2023</p>
+                                <h2>
+                                    <a href="{% url 'news:news_details_ar' 1 %}">SolChem concludes its participation as a titanium sponsor in the 14th GPCA Supply Chain Conference.</a>
+                                </h2>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                        <div class="NewssItem">
+                            <div class="image">
+                                <img src="{% static 'images/new/nwes2.jpg' %}">
+                            </div>
+                            <div class="NwsDatat">
+                                <p>18 May 2023</p>
+                                <h2>
+                                    <a href="{% url 'news:news_details_ar' 1 %}">SolChem concludes its participation as a titanium sponsor in the 14th GPCA Supply Chain Conference.</a>
+                                </h2>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                        <div class="NewssItem">
+                            <div class="image">
+                                <img src="{% static 'images/new/news3.jpg' %}">
+                            </div>
+                            <div class="NwsDatat">
+                                <p>18 May 2023</p>
+                                <h2>
+                                    <a href="{% url 'news:news_details_ar' 1 %}">SolChem concludes its participation as a titanium sponsor in the 14th GPCA Supply Chain Conference.</a>
+                                </h2>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                        <div class="NewssItem">
+                            <div class="image">
+                                <img src="{% static 'images/new/D0103560.jpg' %}">
+                            </div>
+                            <div class="NwsDatat">
+                                <p>18 May 2023</p>
+                                <h2>
+                                    <a href="{% url 'news:news_details_ar' 1 %}">SolChem concludes its participation as a titanium sponsor in the 14th GPCA Supply Chain Conference.</a>
+                                </h2>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                        <div class="NewssItem">
+                            <div class="image">
+                                <img src="{% static 'images/new/D0103560.jpg' %}">
+                            </div>
+                            <div class="NwsDatat">
+                                <p>18 May 2023</p>
+                                <h2>
+                                    <a href="{% url 'news:news_details_ar' 1 %}">SolChem concludes its participation as a titanium sponsor in the 14th GPCA Supply Chain Conference.</a>
+                                </h2>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                        <div class="NewssItem">
+                            <div class="image">
+                                <img src="{% static 'images/new/D0103560.jpg' %}">
+                            </div>
+                            <div class="NwsDatat">
+                                <p>18 May 2023</p>
+                                <h2>
+                                    <a href="{% url 'news:news_details_ar' 1 %}">SolChem concludes its participation as a titanium sponsor in the 14th GPCA Supply Chain Conference.</a>
+                                </h2>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                        <div class="NewssItem">
+                            <div class="image">
+                                <img src="{% static 'images/new/D0103560.jpg' %}">
+                            </div>
+                            <div class="NwsDatat">
+                                <p>18 May 2023</p>
+                                <h2>
+                                    <a href="{% url 'news:news_details_ar' 1 %}">SolChem concludes its participation as a titanium sponsor in the 14th GPCA Supply Chain Conference.</a>
+                                </h2>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                        <div class="NewssItem">
+                            <div class="image">
+                                <img src="{% static 'images/new/D0103560.jpg' %}">
+                            </div>
+                            <div class="NwsDatat">
+                                <p>18 May 2023</p>
+                                <h2>
+                                    <a href="{% url 'news:news_details_ar' 1 %}">SolChem concludes its participation as a titanium sponsor in the 14th GPCA Supply Chain Conference.</a>
+                                </h2>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                        <div class="NewssItem">
+                            <div class="image">
+                                <img src="{% static 'images/new/D0103560.jpg' %}">
+                            </div>
+                            <div class="NwsDatat">
+                                <p>18 May 2023</p>
+                                <h2>
+                                    <a href="{% url 'news:news_details_ar' 1 %}">SolChem concludes its participation as a titanium sponsor in the 14th GPCA Supply Chain Conference.</a>
+                                </h2>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-lg-12">
+                        <div class="styled-pagination text-center">
+                                <ul class="clearfix">
+                                    <li><a href="#"><span class="flaticon-back-1"></span></a></li>
+                                    <li><a href="#">1</a></li>
+                                    <li class="active"><a href="#">2</a></li>
+                                    <li><a href="#">3</a></li>
+                                    <li><a href="#"><span class="flaticon-next-1"></span> </a></li>
+                                </ul>
+                            </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+			
+      
+ 
+  {% block script %}
+  <script>
+    var swiper = new Swiper(".mySwiper", {
+      direction: "vertical",
+      slidesPerView: 1,
+        speed: 1000,
+      spaceBetween: 0,
+      mousewheel: true,
+        autoplay:false,
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+    });
+  </script>
+  {% endblock %}
+        
+  {% endblock %}

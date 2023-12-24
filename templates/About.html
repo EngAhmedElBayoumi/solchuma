@@ -1,0 +1,174 @@
+{% extends 'base.html' %}
+{% load static %}
+<!---extends base.html -->
+
+{% block style %}
+
+{% endblock %}
+
+{% block body %}
+     
+        <!--Page Title-->
+        <section class="page-title" style="background-image:url(images/new/bg1.jpg)">
+            <div class="auto-container">
+                 <ul class="page-breadcrumb">
+                    <li><a href="{% url 'home:home' %}">home</a></li>
+                    <li>About</li>
+                </ul>
+                <h2>About SolChem</h2>
+               
+            </div>
+        </section>
+        <!--End Page Title-->
+
+
+        <!-- About Section -->
+        <section class="about-section">
+            <div class="auto-container">
+                <div class="row">
+
+                    {% for one in section_one %}
+                    <!-- Content Column -->
+                    <div class="content-column col-lg-6 col-md-6 col-sm-12">
+                        <div class="inner-column">
+                            <div class="sec-title">
+                                <h2>{{one.title}}</h2>
+                            </div>
+                            <div class="text-box">
+                                <p>{{one.description}}</p>
+                            </div>
+                         
+                          
+                        </div>
+                    </div>
+
+                    <!-- Image Column -->
+                    <div class="image-column col-lg-6 col-md-6 col-sm-12">
+                        <div class="inner-column">
+                            <div class="image-box">
+                                <div class="videoIframe">
+                                    <iframe src="{{one.video_link}}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+
+
+                    
+                </div>
+            </div>
+        </section>
+        <!--End About Section -->
+
+        {% for two in section_two %}
+        <div class="OurJerny">
+            <div class="auto-container">
+                <div class="sec-title">
+                    <h2>{{two.title}}</h2>
+                </div>
+                <div class="imageJourny">
+                    <img src="{{two.image.url}}">
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+        
+        <div class="vissionMessionValues">
+            <div class="auto-container">
+                <div class="row">
+                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                        <div class="VissionMession">
+                            <div class="sec-title">
+                                <h2>What We Strive For</h2>
+                            </div>
+                            {% for three in section_three %}
+                            <div class="VisisoMessionItem">
+                                <h2>{{three.title}}</h2>
+                                <p>{{three.description}}</p>
+                            </div>
+                            {% endfor %}
+                            
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                        <div class="vlauees">
+                            <div class="sec-title">
+                                <h2>Our Values</h2>
+                            </div>
+                            <div class="row">
+                                {% for foure in section_four %}
+                                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                    <div class="valuessItem">
+                                        <div class="iconImage">
+                                            <img src="{{foure.icon.url}}">
+                                        </div>
+                                        <div class="infofo">
+                                            <h2>{{foure.title}}</h2>
+                                            <p>{{foure.description}}</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                {% endfor %}
+                               
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+ 
+        {% for section_five in section_five %}
+        <!-- About Me -->
+        <section class="about-me">
+            <div class="auto-container">
+                <div class="sec-title">
+                    <h2>{{section_five.title}}</h2>
+                </div>
+
+                <div class="row">
+                    <div class="image-column col-lg-6 col-md-6 col-sm-12">
+                        <div class="image-box">
+                            <figure class="image"><img src="{{section_five.image.url}}" alt=""></figure>
+                        </div>
+                    </div>
+
+                    <div class="info-column col-lg-6 col-md-6 col-sm-12">
+                        <div class="inner-column">
+                            <div class="text-box">
+                            
+                                <h3><span></span>{{section_five.name}}</h3>
+                                <p>{{section_five.description}}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--End About Me -->
+        {% endfor %}
+
+        
+        
+        
+
+        {% block script %}
+        <!-- Initialize Swiper -->
+        <script>
+            var swiper = new Swiper(".mySwiper", {
+            direction: "vertical",
+            slidesPerView: 1,
+              speed: 1000,
+            spaceBetween: 0,
+            mousewheel: true,
+              autoplay:false,
+            pagination: {
+              el: ".swiper-pagination",
+              clickable: true,
+            },
+            });
+            </script>
+        {% endblock %}
+        
+        
+        {% endblock %}

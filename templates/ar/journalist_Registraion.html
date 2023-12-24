@@ -1,0 +1,163 @@
+{% extends 'ar/base.html' %}
+{% load static %}
+
+
+{% block style %}
+    <!-- Demo styles -->
+    <style>
+
+        .swiper {
+          width: 100%;
+          height: 100vh;
+        }
+  
+        .swiper-slide {
+          text-align: start;
+          font-size: 18px;
+          background: #fff;
+  
+          /* Center slide text vertically */
+          display: -webkit-box;
+          display: -ms-flexbox;
+          display: -webkit-flex;
+          display: block;
+          -webkit-box-pack: center;
+          -ms-flex-pack: center;
+          -webkit-justify-content: center;
+          justify-content: center;
+          -webkit-box-align: center;
+          -ms-flex-align: center;
+          -webkit-align-items: center;
+          align-items: center;
+            overflow: hidden;
+        }
+  
+        .swiper-slide img {
+          display: block;
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+          .nav-toggler span{
+              background-color: #006870;
+          }
+      </style>
+{% endblock %}
+{% block body %}
+        
+
+
+        
+     
+        <!--Page Title-->
+        <section class="page-title" style="background-image:url(images/new/bg1.jpg)">
+            <div class="auto-container">
+                 <ul class="page-breadcrumb">
+                    <li><a href="index.html">الرئيسية</a></li>
+                    <li>المركز الإعلامي</li>
+                </ul>
+                <h2>Journalist Registration</h2>
+               
+            </div>
+        </section>
+        <!--End Page Title-->
+
+        <div class="ProductInquuiryPage">
+            <div class="auto-container">
+                <form action="#" method="post">
+                    <div class="formInquiry" style="width: 100%">
+                        <div class="row">
+                            <div class="col-lg-3">
+                                <h2>Personal Information</h2>
+                            </div>
+                            <div class="col-lg-9 mb-5">
+                                <div class="row">
+                                    <div class="col-lg-6">
+                                        <div class="form-group">
+                                            <label>Name <span>*</span></label>
+                                            <input type="text" class="form-control" placeholder="Name">
+                                        </div>
+                                    </div>
+
+                                    <div class="col-lg-6">
+                                        <div class="form-group">
+                                            <div class="row">
+                                                <div class="col-lg-5">
+                                                    <label>Country Code <span>*</span></label>
+                                                    <select class="form-control">
+                                                        <option>Select</option>
+                                                        <option>Egypt</option>
+                                                        <option>KSA</option>
+                                                    </select>
+                                                </div>
+                                                <div class="col-lg-7">
+                                                    <label>Phone <span>*</span></label>
+                                                    <input type="text" class="form-control" placeholder="1********">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <div class="form-group">
+                                            <label>Email <span>*</span></label>
+                                            <input type="email" class="form-control" placeholder="Name">
+                                        </div>
+                                    </div>
+                           
+                                </div>
+                            </div>
+                            
+                            <div class="col-lg-3 ">
+                                <h2>Job   Information</h2>
+                            </div>
+                            <div class="col-lg-9 mb-5">
+                                <div class="row">
+                                    <div class="col-lg-6">
+                                        <div class="form-group">
+                                            <label>Job Title <span>*</span></label>
+                                            <input type="txt" class="form-control" placeholder="Job Title">
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <div class="form-group">
+                                            <label>Publication <span>*</span></label>
+                                            <input type="txt" class="form-control" placeholder="Publication">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4"></div>
+                            <div class="col-lg-8 ProductInQery">
+                                <div class="btn-box">
+                                    <button type="submit" class="theme-btn btn-style-two">
+                                        <span class="btn-title">submit</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        
+        
+    
+ 
+  {% block script %}
+  <script>
+    var swiper = new Swiper(".mySwiper", {
+      direction: "vertical",
+      slidesPerView: 1,
+        speed: 1000,
+      spaceBetween: 0,
+      mousewheel: true,
+        autoplay:false,
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+    });
+  </script>
+  {% endblock %}
+        
+  {% endblock %}

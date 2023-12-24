@@ -1,0 +1,337 @@
+{% extends 'ar/base.html' %}
+{% load static %}
+
+
+{% block style %}
+    <!-- Demo styles -->
+    <style>
+
+        .swiper {
+          width: 100%;
+          height: 100vh;
+        }
+  
+        .swiper-slide {
+          text-align: start;
+          font-size: 18px;
+          background: #fff;
+  
+          /* Center slide text vertically */
+          display: -webkit-box;
+          display: -ms-flexbox;
+          display: -webkit-flex;
+          display: block;
+          -webkit-box-pack: center;
+          -ms-flex-pack: center;
+          -webkit-justify-content: center;
+          justify-content: center;
+          -webkit-box-align: center;
+          -ms-flex-align: center;
+          -webkit-align-items: center;
+          align-items: center;
+            overflow: hidden;
+        }
+  
+        .swiper-slide img {
+          display: block;
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+          .nav-toggler span{
+              background-color: #006870;
+          }
+      </style>
+{% endblock %}
+{% block body %}
+        
+        
+                    <!-- Swiper -->
+<div class="swiper mySwiper">
+    <div class="swiper-wrapper">
+        <div class="swiper-slide">
+                                     <!-- Banner Section -->
+                                     <section class="banner-section">
+                                        <div id="banner-slider" class="banner-slider-wrapper swiper-container">
+                                            <div class="swiper-wrapper banner-slider">
+                                                {% for banner in banner %}
+                                                {% if "mp4" in banner.image_or_video.url  %}
+                                                <!-- SLIDER ITEM -->
+                                                <div class="banner-slider-item swiper-slide">
+                                                    <figure class="media-wrapper slide-inner" style="transform: matrix(1, 0, 0, 1, 0, 0); transition: all 0ms ease 0s;">
+                                                        <div class="VideoBG VideoBGHomePage">
+                                                            <video loop="" autoplay="" muted="">
+                                                                <source src="{{banner.image_or_video.url}}" type="video/mp4">
+                                                            </video>
+                                                        </div>
+                            
+                                                    </figure>
+                                                    <div class="content-box">
+                                                        <div class="content">
+                                                            <div class="auto-container">
+                                                                <h3>{{banner.title_ar}}</h3>
+                                                               
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                {% else %}
+                            
+                                                <!-- SLIDER ITEM -->
+                                                <div class="banner-slider-item swiper-slide">
+                                                    <figure class="media-wrapper slide-inner"><img src="{{banner.image_or_video.url}}" alt=""></figure>
+                                                   
+                                                    <div class="content-box">
+                                                        <div class="content">
+                                                            <div class="auto-container">
+                                                                <h3>{{banner.title}}</h3>
+                                                               
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                {% endif %}
+                            
+                                                {% endfor %}
+                            
+                                            </div>
+                            
+                                            <div class="banner-slider-arrows">
+                                                <i id="banner-slider-previous" class="banner-slider-arrow banner-slider-arrow--previous fa fa-angle-left"></i>
+                                                <i id="banner-slider-next" class="banner-slider-arrow banner-slider-arrow--next fa fa-angle-right"></i>
+                                            </div>
+                            
+                                            <div class="banner-slider-counter"><div id="banner-slider-counter" class="counter"></div></div>
+                                        </div>
+                                           
+                                    </section>
+        <!--End Banner Section -->
+        
+        </div>
+        <div class="swiper-slide">
+            <div class="statiscSection" style="background-image: url({% static 'images/new/bg1.jpg' %})">
+                <div class="overlay">
+                    <div class="row">
+                        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                            <div class="sctiontititle">
+                                <h2 class="sub-title">احصائيات</h2>
+                                <h1 class="main-title">صول كيما بالارقام</h1>
+                            </div>
+                            <div class="statisticItems">
+                                <div class="row">
+                                    {% for sipchem in sipchem  %}
+                                    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                        <div class="Statitm">
+                                            <div class="icon">
+                                                <img src="{{ sipchem.icon.url }}">
+                                            </div>
+                                            <div class="irttSTarDate">
+                                                <span class="note">{{sipchem.title_ar}}</span>
+                                                <div class="NumberCOunt">
+                                                    <div class="number count-outer count-box">
+                                                        <span class="stat-num count-text" >{{sipchem.number}}</span>
+                                                    </div>
+                                                    <div class="vonuName">
+                                                        <span class="stat-plus">+</span>
+                                                        <span class="stat-type">{{sipchem.subtitle_ar}}</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    {% endfor %}
+                                   
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                            <div class="imagesEarth">
+                                <div class="imagee">
+                                    <img src="{% static 'images/new/earth.svg' %}">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="swiper-slide" >
+            <div class="ProductsSection" style="background-image: url({% static 'images/new/section-2-BG.png' %})">
+                <div class="overlay">
+                    <div class="auto-container">
+                        <div class="sctiontititle">
+                            <h2 class="sub-title">منتجات </h2>
+                            {% for product in products %}
+                            <h1 class="main-title">{{ product.title_ar }}</h1>
+                            <p>{{product.description_ar}}</p>
+                            {% endfor %}
+                        </div>
+                        <div class="ProductsItems">
+                            <div class="row">
+                                <div class="col-lg-6 z-one">
+                                    <a href="{% url 'products:products' %}" class="ProdItem d-flex justify-content-center product-btn first">
+                                        <div class="BGImage" style="background-image: url({% static 'images/new/product-btn-1.png' %})"></div>
+                                        
+                                        <div class="ProdName">
+                                            <span>كيماويات</span>
+                                        </div>
+                                        
+                                    </a>
+                                </div>
+                                <div class="col-lg-6 z-one">
+                                    <a href="{% url 'products:products' %}" class="ProdItem d-flex justify-content-center product-btn second">
+                                        <div class="BGImage" style="background-image: url({% static 'images/new/Untitled_1.1.1.png' %})"></div>
+                                        <div class="ProdName">
+                                            <span>بوليمرات</span>
+                                        </div>
+                                        
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="swiper-slide">
+            <div class="InvestSection" style="background-image: url({% static 'images/new/bg1.jpg' %})">
+                <div class="overlay">
+                    <div class="auto-container">
+
+                        <div class="sctiontititle">
+                            <h2 class="sub-title">INVESTORS</h2>
+                            <h1 class="main-title">{{investors.first.title_ar}}</h1>
+                            <p>{{investors.first.description_ar}}</p>
+                        </div>
+                        
+                        <div class="InvesorItems">
+                            <div class="row">
+                                {% for investor in investors %}
+                                    {% if forloop.counter > 1 %}
+                                <div class="col-lg-4 z-one">
+                                    <div class="investItem">
+                                        <h2>{{investor.title_ar}}</h2>
+                                        <p>{{investor.description_ar}}</p>
+                                    </div>
+                                </div>
+                                {% endif %}
+                                {% endfor %}
+                               
+                                
+                            </div>
+                        </div>
+                        <div class="FimeMor">
+                            <a href="#">المزيد</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="swiper-slide">
+            <div class="SUSTAINABILITYSection">
+                <div class="overlay">
+                    <div class="overlaycint">
+                        <div class="auto-container">
+                            <div class="sctiontititle">
+                                <h2 class="sub-title">SUSTAINABILITY</h2>
+                                <h1 class="main-title">{{sustainability.first.title_ar}}</h1>
+                                <p>{{sustainability.first.description_ar}}</p>
+                            </div>
+                            <div class="ShapingItems">
+                                <div class="row">
+                                    {% for sust in sustainability %}
+                                    {% if forloop.counter > 1 %}
+                                    <div class="col-lg-4 z-one">
+                                        <a href="#" class="ShapeItem">
+                                            <div class="images">
+                                                <img class="white" src="{{sust.icon.url}}">
+                                                <img class="colord" src="{{sust.icon.url}}">
+                                            </div>
+                                            <div class="nmamem">
+                                                <h2>{{sust.title_ar}}</h2>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    {% endif %}
+                                    {% endfor %}
+                                   
+
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                    <div class="subImage">
+                        <img src="{% static 'images/new/sus-bg.png' %}">
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+        
+        <div class="swiper-slide">
+            <div class="CareersSection" style="background-image: url({% static 'images/new/section-5-BG.png' %})">
+                <div class="overlay">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-lg-6 col-md-6col-sm-6 col-xs-12">
+                                <div class="sctiontititle">
+                                    <div class="forflx">
+                                        <h2 class="sub-title">مسيراتنا</h2>
+                                        <h1 class="main-title">{{careers.first.title_ar}}</h1>
+                                        <p>{{careers.first.description_ar}}</p>
+                                        <div class="FimeMor">
+                                            <a href="#">المزيد</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-md-6col-sm-6 col-xs-12">
+                                <div class="career-cards" id="career-cards">
+                                    {% for career in careers %}
+                                    {% if forloop.counter > 1  %}
+                                    <a href="#" class="job-opportunities position-relative"
+                                    style=
+                                    "
+                                    background-image: url('{{career.image.url}}') !important;
+                                    "
+                                    id="job-opportunities" target="_blank">
+                                        <div class="">
+                                            <span class="open second-font text-white">
+                                                {{career.title_ar}}
+                                               
+                                            </span>
+                                       
+                                        </div>
+                                    </a>
+                                    {% endif %}
+                                    {% endfor %}
+                                    </div>
+                            </div>
+                        </div>
+ 
+                        </div>
+                </div>
+            </div>
+        </div>
+        
+{% block script %}
+
+<script>
+    var swiper = new Swiper(".mySwiper", {
+      direction: "vertical",
+      slidesPerView: 1,
+        speed: 1000,
+      spaceBetween: 0,
+      mousewheel: true,
+        autoplay:false,
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+    });
+  </script>
+
+{% endblock %}
+
+{% endblock %}

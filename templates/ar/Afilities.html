@@ -1,0 +1,185 @@
+{% extends 'ar/base.html' %}
+{% load static %}
+
+
+{% block style %}
+    <!-- Demo styles -->
+    <style>
+
+        .swiper {
+          width: 100%;
+          height: 100vh;
+        }
+  
+        .swiper-slide {
+          text-align: start;
+          font-size: 18px;
+          background: #fff;
+  
+          /* Center slide text vertically */
+          display: -webkit-box;
+          display: -ms-flexbox;
+          display: -webkit-flex;
+          display: block;
+          -webkit-box-pack: center;
+          -ms-flex-pack: center;
+          -webkit-justify-content: center;
+          justify-content: center;
+          -webkit-box-align: center;
+          -ms-flex-align: center;
+          -webkit-align-items: center;
+          align-items: center;
+            overflow: hidden;
+        }
+  
+        .swiper-slide img {
+          display: block;
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+          .nav-toggler span{
+              background-color: #006870;
+          }
+      </style>
+{% endblock %}
+{% block body %}
+        
+
+
+        
+     
+        <!--Page Title-->
+        <section class="page-title" style="background-image:url(images/new/bg1.jpg)">
+            <div class="auto-container">
+                 <ul class="page-breadcrumb">
+                    <li><a href="index.html">الرئيسية</a></li>
+                    <li>حول</li>
+                </ul>
+                <h2>الشركات التابعة</h2>
+               
+            </div>
+        </section>
+        <!--End Page Title-->
+
+
+        
+        <div class="ProductsPage">
+            <div class="auto-container">
+                <div class="product_info_tabs">
+                    <!--Product Tabs-->
+                    <div class="prodcs_tabs tabs-box">
+                        <!--Tab Btns-->
+                        <ul class="tab-btns tab-buttons clearfix">
+                            <li data-tab="#prod-Affiliates" class="tab-btn active-btn">شركاتنا التابعة</li>
+                            <li data-tab="#prod-Investments" class="tab-btn  ">إستثمارتنا</li>
+                            
+                            
+                        </ul>
+
+                        <!--Tabs Container-->
+                        <div class="tabs-content">
+
+                            <!--Tab-->
+                            
+
+                            <!--Tab-->
+                            <div class="tab active-tab" id="prod-Affiliates">
+                                <div class="ProductList">
+                                    <div class="row">
+                                        {% for affiliates in affiliates %}
+                                        <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                                            <div class="AffiliatesItem">
+                                                <div class="FrontFace">
+                                                    <div class="imageProd">
+                                                        <img src="{{affiliates.main_image.url}}">
+                                                    </div>
+                                                    <div class="ProductName">
+                                                        <h3>{{affiliates.title_ar}}</h3>
+                                                    </div>
+                                                </div>
+                                                <div class="BackEndFace">
+                                                    <div class="more-info">
+                                                        <span class="second-font">
+                                                        <p class="second-font">{{affiliates.description_ar}}</p>
+                                                        <div class="image">
+                                                            <img src="{{affiliates.chart_image.url}}" alt="aff-1" class="en-aff">
+                                                        </div>
+                                                        <div class="date">
+                                                            <span>تاريخ التأسيس :</span>
+                                                            <span>{{affiliates.Date}}</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        {% endfor %}
+    
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab " id="prod-Investments">
+                               <div class="ProductList">
+                                    <div class="row">
+                                        {% for investments in investments %}
+                                        <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                                            <div class="AffiliatesItem">
+                                                <div class="FrontFace">
+                                                    <div class="imageProd">
+                                                        <img src="{{investments.main_image.url}}">
+                                                    </div>
+                                                    <div class="ProductName">
+                                                        <h3>{{investments.title_ar}}</h3>
+                                                    </div>
+                                                </div>
+                                                <div class="BackEndFace">
+                                                    <div class="more-info">
+                                                        <span class="second-font">
+                                                        <p class="second-font">{{investments.description_ar}}</p>
+                                                        <div class="image">
+                                                            <img src="{{investments.chart_image.url}}" alt="aff-1" class="en-aff">
+                                                        </div>
+                                                        <div class="date">
+                                                            <span>تاريخ التأسيس :</span>
+                                                            <span>{{investments.Date}}</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        {% endfor %}
+
+        
+
+
+                                   </div>
+                                </div>
+                            </div>  
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+                             
+           
+        
+  
+        {% block script %}
+        <script>
+            var swiper = new Swiper(".mySwiper", {
+              direction: "vertical",
+              slidesPerView: 1,
+                speed: 1000,
+              spaceBetween: 0,
+              mousewheel: true,
+                autoplay:false,
+              pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+              },
+            });
+          </script>
+        {% endblock %}
+              
+        {% endblock %}

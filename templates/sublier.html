@@ -1,0 +1,126 @@
+{% extends 'base.html' %}
+{% load static %}
+<!---extends base.html -->
+{% block style %}
+
+{% endblock %}
+
+{% block body %}
+
+        
+     
+        <!--Page Title-->
+        <section class="page-title" style="background-image:url(images/new/bg1.jpg)">
+            <div class="auto-container">
+                 <ul class="page-breadcrumb">
+                    <li><a href="{% url 'home:home' %}">home</a></li>
+                    <li>Suppliers</li>
+                </ul>
+                <h2>Suppliers</h2>
+               
+            </div>
+        </section>
+        <!--End Page Title-->
+
+
+        <!-- About Section -->
+        <section class="about-section">
+            <div class="auto-container">
+                <div class="row">
+                    <!-- Content Column -->
+                    <div class="content-column col-lg-6 col-md-6 col-sm-12 d-flex align-items-center">
+                        <div class="inner-column">
+                            <div class="sec-title">
+                                <h2>{{one.first.title}}</h2>
+                            </div>
+                            <div class="text-box">
+                                <p>{{one.first.description}}</p>
+                            </div>
+                         
+                          
+                        </div>
+                    </div>
+
+                    <!-- Image Column -->
+                    <div class="image-column col-lg-6 col-md-6 col-sm-12">
+                        <div class="inner-column">
+                            <div class="image-box">
+                                <img src="{{one.first.image.url}}">
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </section>
+        <!--End About Section -->
+
+        {% for section in two %}
+        <div class="Procurement_Terms">
+            <div class="auto-container">
+                <div class="row">
+                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                        <div class="Terms_Data">
+                            <div class="forflex">
+                                <h2>{{section.title}}</h2>
+                                <p>{{section.description}}</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                        <div class="reports">
+                            <div class="forflex">
+                                <h2>Reports</h2>
+                                <div class="reportsItems">
+                                    {% for report in section.reports.all %}
+                                    <div class="itemReport">
+                                        <a href="{{report.pdf.url}}">{{report.title}}</a>
+                                    </div>
+                                    {% endfor %}
+                                    
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+        
+      
+        
+        <div class="feedBackSystem">
+            <div class="auto-container">
+                <div class="fedBox">
+                    <div class="forflex">
+                        <h2>Supplier Feedback System</h2>
+                        <p>Our Supplier Feedback System allows suppliers to share any feedback, question, or concern. Each request is evaluated by our SRM team, who respond with an appropriate solution in a fast and friendly manner.</p>
+                        <a href="{% url 'contact:contact'  %}">Send Us</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+
+
+        {% block script %}
+        <!-- Initialize Swiper -->
+        <script>
+            var swiper = new Swiper(".mySwiper", {
+            direction: "vertical",
+            slidesPerView: 1,
+              speed: 1000,
+            spaceBetween: 0,
+            mousewheel: true,
+              autoplay:false,
+            pagination: {
+              el: ".swiper-pagination",
+              clickable: true,
+            },
+            });
+            </script>
+        {% endblock %}
+        
+        
+        {% endblock %}

@@ -1,0 +1,175 @@
+{% extends 'ar/base.html' %}
+{% load static %}
+
+
+{% block style %}
+    <!-- Demo styles -->
+    <style>
+
+        .swiper {
+          width: 100%;
+          height: 100vh;
+        }
+  
+        .swiper-slide {
+          text-align: start;
+          font-size: 18px;
+          background: #fff;
+  
+          /* Center slide text vertically */
+          display: -webkit-box;
+          display: -ms-flexbox;
+          display: -webkit-flex;
+          display: block;
+          -webkit-box-pack: center;
+          -ms-flex-pack: center;
+          -webkit-justify-content: center;
+          justify-content: center;
+          -webkit-box-align: center;
+          -ms-flex-align: center;
+          -webkit-align-items: center;
+          align-items: center;
+            overflow: hidden;
+        }
+  
+        .swiper-slide img {
+          display: block;
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+          .nav-toggler span{
+              background-color: #006870;
+          }
+      </style>
+{% endblock %}
+{% block body %}
+        
+
+
+        
+     
+        <!--Page Title-->
+        <section class="page-title" style="background-image:url(images/new/bg1.jpg)">
+            <div class="auto-container">
+                 <ul class="page-breadcrumb">
+                    <li><a href="index.html">الرئيسية</a></li>
+                    <li>الإستدامة</li>
+                </ul>
+                <h2>البيئة</h2>
+               
+            </div>
+        </section>
+        <!--End Page Title-->
+
+
+        <!-- About Section -->
+        <section class="about-section ESGPage">
+            <div class="auto-container">
+                <div class="row">
+                    <!-- Content Column -->
+                    <div class="content-column col-lg-6 col-md-6 col-sm-12 d-flex align-items-center">
+                        <div class="inner-column">
+                            <div class="LinksUrlUper">
+                                <ul>
+                                    <li><a href="{% url 'sustainability:esg_environment_ar' %}" class="active">البيئة</a></li>
+                                    <li><a href="{% url 'sustainability:esg_social_ar' %}" class="">المجتمع</a></li> 
+                                    <li><a href="{% url 'sustainability:esg_governance_ar' %}" class="">الحوكمة</a></li>
+                                </ul>
+                            </div>
+                            <div class="text-box">
+                                <p> {{envronmental.first.section_one.description_ar|safe}} </p>
+                            </div>
+                         
+                          
+                        </div>
+                    </div>
+
+                    <!-- Image Column -->
+                    <div class="image-column col-lg-6 col-md-6 col-sm-12">
+                        <div class="inner-column">
+                            <div class="image-box">
+                                <img src="{{envronmental.first.section_one.image.url}}">
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </section>
+        <!--End About Section -->
+        
+        <div class="Reducing">
+            <div class="auto-container">
+                <div class="ReducingContent">
+                    <h2>{{envronmental.first.section_two.title_ar}}</h2>
+                    <p>{{envronmental.first.section_two.description_ar|safe}}</p>
+                </div>
+            </div>
+        </div>
+        
+        
+        <div class="CircularEconomy">
+            <div class="auto-container">
+                <h2 class="TitleCircu">{{envronmental.first.tabs.title_ar}}</h2>
+                <div class="TapsCircular">
+                    <ul class="nav nav-pills nav-justified" role="tablist">
+                        {% for tab in envronmental.first.tabs.tab.all %}
+                        <li class="nav-item waves-effect waves-light">
+                            <a class="nav-link {% if forloop.first %}active-tab{% endif %}" data-bs-toggle="tab" href="#home-{{tab.id}}" role="tab">
+                                <span class="">{{tab.title_ar}}</span> 
+                            </a>
+                        </li>
+                        {% endfor %}
+                       
+
+                    </ul>
+
+                    <!-- Tab panes -->
+                    <div class="tab-content p-3 text-muted">
+                        {% for tab in envronmental.first.tabs.tab.all %}
+                        <div class="tab-pane {% if forloop.first %}active-tab{% endif %}" id="home-{{tab.id}}" role="tabpanel">
+                            <p class="mb-0">
+                                {{tab.description_ar|safe}}
+                            </p>
+                        </div>
+                        {% endfor %}
+                       
+
+                    </div>
+        
+                </div>
+            </div>
+        </div>
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+ 
+  {% block script %}
+  <script>
+    var swiper = new Swiper(".mySwiper", {
+      direction: "vertical",
+      slidesPerView: 1,
+        speed: 1000,
+      spaceBetween: 0,
+      mousewheel: true,
+        autoplay:false,
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+    });
+  </script>
+  {% endblock %}
+        
+  {% endblock %}

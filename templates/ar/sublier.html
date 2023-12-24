@@ -1,0 +1,164 @@
+{% extends 'ar/base.html' %}
+{% load static %}
+
+
+{% block style %}
+    <!-- Demo styles -->
+    <style>
+
+        .swiper {
+          width: 100%;
+          height: 100vh;
+        }
+  
+        .swiper-slide {
+          text-align: start;
+          font-size: 18px;
+          background: #fff;
+  
+          /* Center slide text vertically */
+          display: -webkit-box;
+          display: -ms-flexbox;
+          display: -webkit-flex;
+          display: block;
+          -webkit-box-pack: center;
+          -ms-flex-pack: center;
+          -webkit-justify-content: center;
+          justify-content: center;
+          -webkit-box-align: center;
+          -ms-flex-align: center;
+          -webkit-align-items: center;
+          align-items: center;
+            overflow: hidden;
+        }
+  
+        .swiper-slide img {
+          display: block;
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+          .nav-toggler span{
+              background-color: #006870;
+          }
+      </style>
+{% endblock %}
+{% block body %}
+        
+
+
+        
+     
+        <!--Page Title-->
+        <section class="page-title" style="background-image:url(images/new/bg1.jpg)">
+            <div class="auto-container">
+                 <ul class="page-breadcrumb">
+                    <li><a href="index.html">الرئيسية</a></li>
+                    <li>الموردون</li>
+                </ul>
+                <h2>الموردون</h2>
+               
+            </div>
+        </section>
+        <!--End Page Title-->
+
+
+        <!-- About Section -->
+        <section class="about-section">
+            <div class="auto-container">
+                <div class="row">
+                    <!-- Content Column -->
+                    <div class="content-column col-lg-6 col-md-6 col-sm-12 d-flex align-items-center">
+                        <div class="inner-column">
+                            <div class="sec-title">
+                                <h2>{{one.first.title_ar}}</h2>
+                            </div>
+                            <div class="text-box">
+                                <p>{{one.first.description_ar}}</p>
+                            </div>
+                         
+                          
+                        </div>
+                    </div>
+
+                    <!-- Image Column -->
+                    <div class="image-column col-lg-6 col-md-6 col-sm-12">
+                        <div class="inner-column">
+                            <div class="image-box">
+                                <img src="{{one.first.image.url}}">
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </section>
+        <!--End About Section -->
+
+        {% for section in two %}
+        <div class="Procurement_Terms">
+            <div class="auto-container">
+                <div class="row">
+                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                        <div class="Terms_Data">
+                            <div class="forflex">
+                                <h2>{{section.title_ar}}</h2>
+                                <p>{{section.description_ar}}</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                        <div class="reports">
+                            <div class="forflex">
+                                <h2>تقارير</h2>
+                                <div class="reportsItems">
+                                    {% for report in section.reports.all %}
+                                    <div class="itemReport">
+                                        <a href="{{report.pdf.url}}">{{report.title_ar}}</a>
+                                    </div>
+                                    {% endfor %}
+                                    
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+        
+
+        
+        <div class="feedBackSystem">
+            <div class="auto-container">
+                <div class="fedBox">
+                    <div class="forflex">
+                        <h2>نظام إفادات الموردين</h2>
+                        <p>يتيح نظام إفادات الموردين في سيبكم للموردين مشاركة أي ملاحظات أو أسئلة أو مخاوف. يتم تقييم كل طلب من قبل فريق إدارة علاقات الموردين بالشركة، والذي يقدم الحلول المناسبة للموردين بطريقة سريعة وودية.</p>
+                        <a href="{% url 'contact:contact_ar'  %}">أرسل لنا</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+
+ 
+        {% block script %}
+        <script>
+          var swiper = new Swiper(".mySwiper", {
+            direction: "vertical",
+            slidesPerView: 1,
+              speed: 1000,
+            spaceBetween: 0,
+            mousewheel: true,
+              autoplay:false,
+            pagination: {
+              el: ".swiper-pagination",
+              clickable: true,
+            },
+          });
+        </script>
+        {% endblock %}
+              
+        {% endblock %}

@@ -1,0 +1,147 @@
+{% extends 'base.html' %}
+{% load static %}
+<!---extends base.html -->
+{% block style %}
+
+{% endblock %}
+
+{% block body %}
+
+        
+     
+        <!--Page Title-->
+        <section class="page-title" style="background-image:url(images/new/bg1.jpg)">
+            <div class="auto-container">
+                 <ul class="page-breadcrumb">
+                    <li><a href="{% url 'home:home' %}">home</a></li>
+                    <li>Sustainability</li>
+                </ul>
+                <h2>Environmental</h2>
+               
+            </div>
+        </section>
+        <!--End Page Title-->
+
+
+        <!-- About Section -->
+        <section class="about-section ESGPage">
+            <div class="auto-container">
+                <div class="row">
+                    <!-- Content Column -->
+                    <div class="content-column col-lg-6 col-md-6 col-sm-12 d-flex align-items-center">
+                        <div class="inner-column">
+                            <div class="LinksUrlUper">
+                                <ul>
+                                    <li><a href="{% url 'sustainability:esg_environment' %}" class="active">Envronmental</a></li>
+                                    <li><a href="{% url 'sustainability:esg_social' %}" class="">Social</a></li>
+                                    <li><a href="{% url 'sustainability:esg_governance' %}" class="">Governance</a></li>
+                                </ul>
+                            </div>
+                            <div class="text-box">
+                               <p> {{envronmental.first.section_one.description|safe}} </p>
+                            </div>
+                         
+                          
+                        </div>
+                    </div>
+
+                    <!-- Image Column -->
+                    <div class="image-column col-lg-6 col-md-6 col-sm-12">
+                        <div class="inner-column">
+                            <div class="image-box">
+                                <img src="{{envronmental.first.section_one.image.url}}">
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </section>
+        <!--End About Section -->
+        
+        <div class="Reducing">
+            <div class="auto-container">
+                <div class="ReducingContent">
+                    <h2>{{envronmental.first.section_two.title}}</h2>
+                    <p>{{envronmental.first.section_two.description|safe}}</p>
+                </div>
+            </div>
+        </div>
+        
+        
+        <div class="CircularEconomy">
+            <div class="auto-container">
+                <h2 class="TitleCircu">{{envronmental.first.tabs.title}}</h2>
+                <div class="TapsCircular">
+                    <ul class="nav nav-pills nav-justified" role="tablist">
+                        {% for tab in envronmental.first.tabs.tab.all %}
+                        <li class="nav-item waves-effect waves-light">
+                            <a class="nav-link {% if forloop.first %}active-tab{% endif %}" data-bs-toggle="tab" href="#home-{{tab.id}}" role="tab">
+                                <span class="">{{tab.title}}</span> 
+                            </a>
+                        </li>
+                        {% endfor %}
+                       
+
+                    </ul>
+
+                    <!-- Tab panes -->
+                    <div class="tab-content p-3 text-muted">
+                        {% for tab in envronmental.first.tabs.tab.all %}
+                        <div class="tab-pane {% if forloop.first %}active-tab{% endif %}" id="home-{{tab.id}}" role="tabpanel">
+                            <p class="mb-0">
+                                {{tab.description|safe}}
+                            </p>
+                        </div>
+                        {% endfor %}
+                       
+
+                    </div>
+        
+                </div>
+            </div>
+        </div>
+        
+        
+        
+        
+        
+        
+        
+{% block script %}
+<!-- Initialize Swiper -->
+<script>
+    var swiper = new Swiper(".mySwiper", {
+    direction: "vertical",
+    slidesPerView: 1,
+      speed: 1000,
+    spaceBetween: 0,
+    mousewheel: true,
+      autoplay:false,
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+    });
+    </script>
+    <script>
+        $(document).ready(function () {
+            // active btn
+            $(".tab-btn").click(function () {
+                $(".tab-btn").removeClass("active-btn");
+                $(this).addClass("active-btn");
+            });
+            // active tab
+            $(".tab-btn").click(function () {
+                var tab_id = $(this).attr("data-tab");
+
+                $(".tab").removeClass("active-tab");
+                $("#" + tab_id).addClass("active-tab");
+            });
+        });
+    </script>
+
+{% endblock %}
+
+
+{% endblock %}

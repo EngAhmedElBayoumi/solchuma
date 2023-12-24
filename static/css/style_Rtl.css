@@ -1,0 +1,455 @@
+body{
+    direction: rtl;
+    text-align: start;
+    font-family: 'Cairo', sans-serif;
+}
+.banner-slider-arrows{
+    direction: ltr;
+}
+.statiscSection .overlay {
+    padding-right: 112px;
+    padding-left: 0;
+}
+.statiscSection .imagesEarth .imagee {
+
+    left: -50px;
+    right: auto;
+}
+
+.statiscSection .sctiontititle .sub-title{
+        padding-right: 81px;
+    padding-left: 0;
+}
+.statiscSection .sctiontititle .sub-title::before{
+    right: 0;
+    left: auto;
+}
+.statiscSection .statisticItems .Statitm .irttSTarDate .NumberCOunt .number{
+        margin-left: 15px;
+    margin-right: 0;
+}
+.ProductsSection .sctiontititle .sub-title {
+    padding-right: 81px;
+    padding-left: 0;
+}
+.ProductsSection .sctiontititle .sub-title::before {
+    left: auto;
+    right: 0;
+}
+.InvestSection .sctiontititle .sub-title{
+        padding-right: 81px;
+    padding-left: 0;
+}
+.InvestSection .sctiontititle .sub-title::before{
+        left: auto;
+    right: 0;
+}
+.InvestSection .InvesorItems .investItem h2{
+        border-right: 4px solid #fd9144;
+        border-left: 0px solid #fd9144;
+        padding-right: 30px;
+        padding-left: 0px;
+}
+.InvestSection .InvesorItems .investItem p{
+      padding-right: 30px;
+        padding-left: 0px;
+}
+.SUSTAINABILITYSection .sctiontititle .sub-title{
+         padding-right: 81px;
+    padding-left: 0;
+}
+.SUSTAINABILITYSection .sctiontititle .sub-title::before{
+            left: auto;
+    right: 0;
+}
+.CareersSection .sctiontititle .sub-title{
+             padding-right: 81px;
+    padding-left: 0;
+}
+.CareersSection .sctiontititle .sub-title::before{
+                left: auto;
+    right: 0;
+}
+
+.main-header .logo-box{
+        float: right;
+}
+.header-style-two .nav-outer {
+    float: left;
+}
+.main-menu .navigation > li{
+        float: right;
+}
+.main-menu .navigation > li > ul{
+    left: auto;
+    right: 0;
+}
+.page-breadcrumb li{
+        margin-left: 10px;
+        margin-right: 0;
+    padding-left: 15px;
+    padding-right: 0;
+}
+.page-breadcrumb li:after{
+        left: -2px;
+ right: auto;
+}
+.about-me .info-column .inner-column {
+    left: -auto;
+    right: -90px;
+}
+.ESGPage .LinksUrlUper ul li{
+        margin-right: 0;
+        margin-left: 30px;
+}
+
+.GallaryPage .GallarySearch form input{
+    border-radius: 0 5px 5px 0;
+}
+.GallaryPage .GallarySearch form button{
+    border-radius: 5px 0 0 5px;
+}
+.GallaryPage .GallaryItem .GallaryDatat .countImageInAlbum{
+    left: 0;
+    right: auto;
+}
+
+.styled-pagination{
+    direction: ltr;
+}
+.NewsPage .NewsSearch form input{
+        border-radius: 0 5px 5px 0;
+}
+.NewsPage .NewsSearch form button{
+       border-radius: 5px 0 0 5px;
+}
+.project-detail .upper-box{
+     direction: ltr;
+}
+.ProductDetailsPage .brochure-box .owl-nav{
+    direction: ltr;
+    right: auto;
+    left: 0;
+}
+.brochure-box .theme-btn i{
+    margin-left: 10px;
+    margin-right: 0;
+}
+
+.customCercle .tab-pane ul li{
+        border-left: 1px solid #000;
+        border-right: 0px solid #000;
+}
+.customCercle .tab-pane ul li:last-child {
+    border-right: 0px solid #fff;
+    border-left: 0px solid #000;
+}
+h1,h2,h3,h4,h5,h6 {
+	font-family: 'Cairo', sans-serif;
+}
+.theme-btn{
+	font-family: 'Cairo', sans-serif;
+}
+.main-menu{
+	font-family: 'Cairo', sans-serif;
+}
+.sidenav-bar .navigation{
+	font-family: 'Cairo', sans-serif;
+}
+.sidenav-bar .contact-info-box .info-box strong{
+	font-family: 'Cairo', sans-serif;
+}
+.main-menu .navigation > li > a{
+    font-family: 'Cairo', sans-serif;;
+}
+.sec-title .float-text{
+    font-family: 'Cairo', sans-serif;
+}
+.banner-section .swiper-slide h2{
+	font-family: 'Cairo', sans-serif;
+}
+.banner-section .swiper-slide h3{
+	font-family: 'Cairo', sans-serif;
+}
+.banner-section .swiper-slide .SmallTitle{
+    font-family: 'Cairo', sans-serif;
+}
+.banner-section-two .slide-item h2{
+	font-family: 'Cairo', sans-serif;
+}
+.banner-section-three h2{
+	font-family: 'Cairo', sans-serif;
+}
+.about-us .sec-title h2 {
+    font-family: 'Cairo', sans-serif;
+
+}
+
+.about-us .about-years h3{
+	font-family: 'Cairo', sans-serif;
+}
+.about-me .bottom-box .name{
+	font-family: 'Cairo', sans-serif;
+}
+.features-section .tititle h2{
+    font-family: 'Cairo', sans-serif;
+}
+.project-section .SectionTitle .MainTitle {
+    font-family: 'Cairo', sans-serif;
+}
+.project-section .SectionTitle .SecTitle {
+    font-family: 'Cairo', sans-serif;
+}
+.project-section-two .filters li{
+    font-family: 'Cairo', sans-serif;
+}
+.project-detail blockquote{
+	font-family: 'Cairo', sans-serif;
+}
+.project-detail .ProjType{
+    font-family: 'Cairo', sans-serif;
+}
+.contact-page-section .contact-info li strong{
+    font-family: 'Cairo', sans-serif;
+}
+.team-block .other-info li strong{
+	font-family: 'Cairo', sans-serif;
+}
+.pricing-table .price-box .title{
+	font-family: 'Cairo', sans-serif;
+}
+.pricing-tabs .tab-btns li{
+	font-family: 'Cairo', sans-serif;
+}
+.blog-single blockquote{
+	font-family: 'Cairo', sans-serif;
+}
+.blog-single .post-share-options p{
+	font-family: 'Cairo', sans-serif;
+}
+.main-footer .footer-bottom .copyright-text a{
+	font-family: 'Cairo', sans-serif;
+}
+.main-footer .footer-bottom .footer-nav ul li{
+	font-family: 'Cairo', sans-serif;
+}
+.blog-cat li a{
+	font-family: 'Cairo', sans-serif;
+}
+.comments-area .comment-box .reply-btn{
+	font-family: 'Cairo', sans-serif;
+}
+.shop-item .lower-content .name{
+	font-family: 'Cairo', sans-serif;
+}
+.sidebar .related-posts .post h4{
+	font-family: 'Cairo', sans-serif;
+}
+.prod-tabs .tabs-content .tab .title{
+	font-family: 'Cairo', sans-serif;
+}
+.cart-table tbody tr td .prod-title{
+	font-family: 'Cairo', sans-serif;
+}
+.cart-section .cart-options .cart-btn{
+	font-family: 'Cairo', sans-serif;
+}
+.cart-section .coupon-btn{
+	font-family: 'Cairo', sans-serif;
+}
+
+.cart-section .totals-table .proceed-btn{
+	font-family: 'Cairo', sans-serif;
+}
+.shipping-form button{
+	font-family: 'Cairo', sans-serif;
+}
+.order-box ul li strong{
+	font-family: 'Cairo', sans-serif;
+}
+.time-counter .time-countdown .counter-column{
+	font-family: 'Cairo', sans-serif;
+}
+.coming-soon .emailed-form .text{
+	font-family: 'Cairo', sans-serif;
+}
+.language a{
+    font-family: 'Cairo', sans-serif;
+}
+
+.OurProjects .SectionTitle .MainTitle{
+    font-family: 'Cairo', sans-serif;
+    
+}
+.OurProjects .SectionTitle .SecTitle {
+    font-family: 'Cairo', sans-serif;
+}
+.OurProjects .ProjectItem .ProjDetails h2{
+    font-family: 'Cairo', sans-serif;
+}
+.ClientsCaurosel .SectionTitle .MainTitle{
+    font-family: 'Cairo', sans-serif;
+}
+.ClientsCaurosel .SectionTitle .SecTitle {
+    font-family: 'Cairo', sans-serif;
+}
+.contactUs .SectionTitle .MainTitle{
+    font-family: 'Cairo', sans-serif;
+}
+.contactUs .SectionTitle .SecTitle{
+    font-family: 'Cairo', sans-serif;
+}
+.contactInfo .ContactItem .ContInfo .info p{
+    font-family: 'Cairo', sans-serif;
+}
+.contactInfo .ContactItem .ContInfo .info h2{
+    font-family: 'Cairo', sans-serif;
+}
+.footerNew .FooterInfo .hotcinsocial .hotline .hotInfo h2{
+    font-family: 'Cairo', sans-serif;
+}
+.footerNew .CipyRight p{
+    font-family: 'Cairo', sans-serif;
+}
+.footerNew .Address p{
+    font-family: 'Cairo', sans-serif;
+}
+.ProjctDtails .SectionTitle .MainTitle{
+    font-family: 'Cairo', sans-serif;
+}
+.ProjctDtails .SectionTitle .SecTitle {
+    font-family: 'Cairo', sans-serif;
+}
+.consept .tititle h2{
+    font-family: 'Cairo', sans-serif;
+}
+.masterplane .tititle h2{
+    font-family: 'Cairo', sans-serif;
+}
+.convintnalLocation .tititle h2{
+    font-family: 'Cairo', sans-serif;
+}
+.convintnalLocation .ItemConver h2{
+    font-family: 'Cairo', sans-serif;
+}
+.convintnalLocation .ItemConver h2{
+    font-family: 'Cairo', sans-serif;
+}
+.gallarySection .tititle h2{
+    font-family: 'Cairo', sans-serif;
+}
+
+.GetStarted .GetStartedCont h2{
+    font-family: 'Cairo', sans-serif;
+}
+
+.GetStarted .GetStartedCont p{
+    font-family: 'Cairo', sans-serif;
+}
+.AboutTitle h2{
+    font-family: 'Cairo', sans-serif;
+}
+.news-block .lower-content h3 a {
+    font-family: 'Cairo', sans-serif;
+}
+.N_NewsEvent .news-block .lower-content h3 a {
+    font-family: 'Cairo', sans-serif;
+}
+.N_WhatDelererd .news-block .lower-content h3 a {
+    font-family: 'Cairo', sans-serif;
+}
+.TimeLessDutes .TimDutCont .ItemsTimes .TimesDet .titlt h2 span{
+    font-family: 'Cairo', sans-serif;
+}
+
+.TimeLessDutes .TimDutCont .ItemsTimes .TimesDet .Descrip p{
+    font-family: 'Cairo', sans-serif;
+}
+.OurJournal .ourjornalCont .mainTitle .titiledsc p{
+    font-family: 'Cairo', sans-serif;
+}
+.OurJournal .ourjornalCont .DescOur p{
+    font-family: 'Cairo', sans-serif;
+}
+.TLDStatistics .StatisticCont .Staticitem .count_Couter .count-text{
+    font-family: 'Cairo', sans-serif;
+}
+.TLDStatistics .StatisticCont .Staticitem .counter_title{
+        font-family: 'Cairo', sans-serif;
+}
+.RellatedProjectTLD .tititle h2{
+    font-family: 'Cairo', sans-serif;
+}
+.tophadder ul li a{
+    font-family: 'Cairo', sans-serif;
+}
+.main-menu .navigation > li > a{
+    font-size: 15px;
+}
+.main-menu {
+    float: right;
+}
+.main-header .outer-box {
+    float: left;
+}
+
+.statiscSection .statisticItems .Statitm .irttSTarDate .NumberCOunt .vonuName .stat-type{
+    font-size: 14px;
+}
+.statiscSection .statisticItems .Statitm{
+    margin-top: 25px;
+}
+.CareersSection .career-cards span{
+    font-size: 30px;
+}
+.CareersSection .career-cards span{
+    left: 60px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

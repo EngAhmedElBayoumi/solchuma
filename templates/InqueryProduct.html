@@ -1,0 +1,148 @@
+{% extends 'base.html' %}
+{% load static %}
+<!---extends base.html -->
+{% block style %}
+
+{% endblock %}
+
+{% block body %}
+
+        
+     
+        <!--Page Title-->
+        <section class="page-title" style="background-image:url(images/new/bg1.jpg)">
+            <div class="auto-container">
+                 <ul class="page-breadcrumb">
+                    <li><a href="{% url 'home:home' %}">home</a></li>
+                    <li>Product Inquiry</li>
+                </ul>
+                <h2>SolChem Products</h2>
+               
+            </div>
+        </section>
+        <!--End Page Title-->
+
+        <div class="ProductInquuiryPage">
+            <div class="auto-container">
+                <form action="#" method="post">
+                    <div class="formInquiry">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <h2>Personal Information</h2>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="form-group">
+                                    <label>Name <span>*</span></label>
+                                    <input type="text" class="form-control" placeholder="Name">
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="form-group">
+                                    <label>Company <span>*</span></label>
+                                    <input type="text" class="form-control" placeholder="Name">
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="form-group">
+                                    <div class="row">
+                                        <div class="col-lg-6">
+                                            <label>Country Code <span>*</span></label>
+                                            <select class="form-control">
+                                                <option>Select</option>
+                                                <option>Egypt</option>
+                                                <option>KSA</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <label>Phone <span>*</span></label>
+                                            <input type="text" class="form-control" placeholder="1********">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="form-group">
+                                    <label>Email <span>*</span></label>
+                                    <input type="email" class="form-control" placeholder="Name">
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="form-group">
+                                    <label>Country <span>*</span></label>
+                                    <select class="form-control">
+                                        <option>Select</option>
+                                        <option>Egypt</option>
+                                        <option>KSA</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-lg-12">
+                                <h2>Product  Information</h2>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="form-group">
+                                    <label>Country Code <span>*</span></label>
+                                    <select class="form-control">
+                                        <option>Select</option>
+                                        <option>Egypt</option>
+                                        <option>KSA</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="form-group">
+                                    <label>Country Code <span>*</span></label>
+                                    <select class="form-control">
+                                        <option>Select</option>
+                                        <option>Egypt</option>
+                                        <option>KSA</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-lg-12">
+                                <div class="form-group">
+                                    <label>Subject <span>*</span></label>
+                                    <input type="txt" class="form-control" placeholder="Subject">
+                                </div>
+                            </div>
+                            <div class="col-lg-12">
+                                <div class="form-group">
+                                    <label>Inquiry Details <span>*</span></label>
+                                    <textarea rows="4" style="height: 150px" class="form-control" placeholder="Inquiry"></textarea>
+                                </div>
+                            </div>
+                            <div class="col-lg-12 ProductInQery">
+                                <div class="btn-box">
+                                    <a href="InqueryProduct.html" class="theme-btn btn-style-two">
+                                        <span class="btn-title">Product inquiry</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        
+        
+  
+{% block script %}
+<!-- Initialize Swiper -->
+<script>
+    var swiper = new Swiper(".mySwiper", {
+    direction: "vertical",
+    slidesPerView: 1,
+      speed: 1000,
+    spaceBetween: 0,
+    mousewheel: true,
+      autoplay:false,
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+    });
+    </script>
+{% endblock %}
+
+
+{% endblock %}

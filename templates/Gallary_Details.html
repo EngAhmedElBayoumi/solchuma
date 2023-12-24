@@ -1,0 +1,119 @@
+{% extends 'base.html' %}
+{% load static %}
+<!---extends base.html -->
+
+{% block style %}
+
+{% endblock %}
+
+{% block body %}
+        
+     
+        <!--Page Title-->
+        <section class="page-title" style="background-image:url(images/new/bg1.jpg)">
+            <div class="auto-container">
+                 <ul class="page-breadcrumb">
+                    <li><a href="{% url 'home:home' %}">home</a></li>
+                    <li>Media Center</li>
+                    <li>Gallary</li>
+                </ul>
+                <h2>Gallary Details</h2>
+               
+            </div>
+        </section>
+        <!--End Page Title-->
+
+
+
+        <div class="GallaryDeatialPage">
+            <div class="auto-container">
+                <h1>SolChem Cares</h1>
+                <h2>Photos</h2>
+                <div class="row">
+                    <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+                        <div class="GallayDetailItem">
+                            <figure class="image">
+                                <a href="images/new/gallry1.jpg" class="lightbox-image" data-fancybox="images">
+                                    <img src="{% static 'images/new/gallry1.jpg' %}" alt="">
+                                </a>
+                            </figure>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+                        <div class="GallayDetailItem">
+                            <figure class="image">
+                                <a href="images/new/gall2.jpg" class="lightbox-image" data-fancybox="images">
+                                    <img src="{% static 'images/new/gall2.jpg' %}" alt="">
+                                </a>
+                            </figure>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+                        <div class="GallayDetailItem">
+                            <figure class="image">
+                                <a href="images/new/gall3.jpg" class="lightbox-image" data-fancybox="images">
+                                    <img src="{% static 'images/new/gall3.jpg' %}" alt="">
+                                </a>
+                            </figure>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+                        <div class="GallayDetailItem">
+                            <figure class="image">
+                                <a href="images/new/gall4.jpg" class="lightbox-image" data-fancybox="images">
+                                    <img src="{% static 'images/new/gall4.jpg' %}" alt="">
+                                </a>
+                            </figure>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+                        <div class="GallayDetailItem">
+                            <figure class="image">
+                                <a href="images/new/gall5.jpg" class="lightbox-image" data-fancybox="images">
+                                    <img src="{% static 'images/new/gall5.jpg' %}" alt="">
+                                </a>
+                            </figure>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+                        <div class="GallayDetailItem">
+                            <figure class="image">
+                                <a href="images/new/gall6.jpg" class="lightbox-image" data-fancybox="images">
+                                    <img src="{% static 'images/new/gall6.jpg' %}" alt="">
+                                </a>
+                            </figure>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+                        <div class="GallayDetailItem">
+                            <figure class="image">
+                                <a href="images/new/gall7.jpg" class="lightbox-image" data-fancybox="images">
+                                    <img src="{% static 'images/new/gall7.jpg' %}" alt="">
+                                </a>
+                            </figure>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+ 
+{% block script %}
+<!-- Initialize Swiper -->
+<script>
+    var swiper = new Swiper(".mySwiper", {
+    direction: "vertical",
+    slidesPerView: 1,
+      speed: 1000,
+    spaceBetween: 0,
+    mousewheel: true,
+      autoplay:false,
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+    });
+    </script>
+{% endblock %}
+
+
+{% endblock %}

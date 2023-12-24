@@ -1,0 +1,179 @@
+{% extends 'ar/base.html' %}
+{% load static %}
+
+
+{% block style %}
+    <!-- Demo styles -->
+    <style>
+
+        .swiper {
+          width: 100%;
+          height: 100vh;
+        }
+  
+        .swiper-slide {
+          text-align: start;
+          font-size: 18px;
+          background: #fff;
+  
+          /* Center slide text vertically */
+          display: -webkit-box;
+          display: -ms-flexbox;
+          display: -webkit-flex;
+          display: block;
+          -webkit-box-pack: center;
+          -ms-flex-pack: center;
+          -webkit-justify-content: center;
+          justify-content: center;
+          -webkit-box-align: center;
+          -ms-flex-align: center;
+          -webkit-align-items: center;
+          align-items: center;
+            overflow: hidden;
+        }
+  
+        .swiper-slide img {
+          display: block;
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+          .nav-toggler span{
+              background-color: #006870;
+          }
+      </style>
+{% endblock %}
+{% block body %}
+        
+
+
+        
+     
+        <!--Page Title-->
+        <section class="page-title" style="background-image:url(images/new/bg1.jpg)">
+            <div class="auto-container">
+                 <ul class="page-breadcrumb">
+                    <li><a href="index.html">الرئيسية</a></li>
+                    <li>الإستدامة</li>
+                </ul>
+                <h2>{{one.first.title_ar}}</h2>
+               
+            </div>
+        </section>
+        <!--End Page Title-->
+
+
+        <!-- About Section -->
+        <section class="about-section">
+            <div class="auto-container">
+                <div class="row">
+                    <!-- Content Column -->
+                    <div class="content-column col-lg-6 col-md-6 col-sm-12">
+                        <div class="inner-column">
+                          
+                            <div class="text-box">
+                                <p>{{one.first.description_ar}}</p>
+                            </div>
+                         
+                          
+                        </div>
+                    </div>
+
+                    <!-- Image Column -->
+                    <div class="image-column col-lg-6 col-md-6 col-sm-12">
+                        <div class="inner-column" style="    margin-top: -200px;">
+                            <div class="image-box">
+                                <div class="videoIframe">
+                                    <iframe src="{{one.first.url}}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </section>
+        <!--End About Section -->
+
+        <div class="accomplishments">
+            <div class="auto-container">
+                <div class="sec-title text-center">
+                    <h2>{{two.first.title_ar}}</h2>
+                </div>
+                <div class="row">
+                    {% for i in two.first.statistics.all %}
+                    <div class="col-lg-4 colmd-4 col-sm-4 col-xs-12">
+                        <div class="accomplishmentsItem">
+                            <div class="count-outer count-box">
+                                <h2 ><span class="count-text" data-speed="2000" data-stop="{{i.number}}">0</span> <span>{{i.symbol}}</span></h2>
+                            </div>
+                            <p>{{i.title_ar}}</p>
+                        </div>
+                    </div>
+                    {% endfor %}
+                   
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="Corporate">
+            <div class="auto-container">
+                <div class="sec-title">
+                    <h2>{{three.first.title_ar}}</h2>
+                </div>
+                <div class="row">
+                    {% for i in three.first.description.all %}
+                    <div class="col-lg-6">
+                        <div class="CorporateItem">
+                            <p>{{i.description_ar}}</p>
+                        </div>
+                    </div>
+                    {% endfor %}
+                   
+                </div>
+            </div>
+        </div>
+        
+        <div class="CaresSectionn">
+            <div class="auto-container">
+                <div class="row">
+                    <div class="col-lg-7 col-md-7 col-sm-6 col-xs-12">
+                        <div class="sec-title">
+                            <h2>{{four.first.title_ar}}</h2>
+                        </div>
+                        <div class="desdcrition">
+                            <p>{{four.first.description_ar}}</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-5 col-md-5 col-sm-6 col-xs-12">
+                        <div class="imageCareers">
+                            <div class="image">
+                                <img src="{{four.first.image.url}}">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+  
+ 
+        {% block script %}
+        <script>
+          var swiper = new Swiper(".mySwiper", {
+            direction: "vertical",
+            slidesPerView: 1,
+              speed: 1000,
+            spaceBetween: 0,
+            mousewheel: true,
+              autoplay:false,
+            pagination: {
+              el: ".swiper-pagination",
+              clickable: true,
+            },
+          });
+        </script>
+        {% endblock %}
+              
+        {% endblock %}

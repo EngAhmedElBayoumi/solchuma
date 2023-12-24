@@ -1,0 +1,152 @@
+{% extends 'base.html' %}
+{% load static %}
+<!---extends base.html -->
+
+{% block style %}
+
+{% endblock %}
+
+{% block body %}
+        
+     
+        <!--Page Title-->
+        <section class="page-title" style="background-image:url(images/new/bg1.jpg)">
+            <div class="auto-container">
+                 <ul class="page-breadcrumb">
+                    <li><a href="{% url 'home:home' %}">home</a></li>
+                    <li>About</li>
+                </ul>
+                <h2>Affiliates</h2>
+               
+            </div>
+        </section>
+        <!--End Page Title-->
+
+
+        
+        <div class="ProductsPage">
+            <div class="auto-container">
+                <div class="product_info_tabs">
+                    <!--Product Tabs-->
+                    <div class="prodcs_tabs tabs-box">
+                        <!--Tab Btns-->
+                        <ul class="tab-btns tab-buttons clearfix">
+                            <li data-tab="#prod-Affiliates" class="tab-btn active-btn">Our Affiliates</li>
+                            <li data-tab="#prod-Investments" class="tab-btn  ">Our Investments</li>
+                            
+                            
+                        </ul>
+
+                        <!--Tabs Container-->
+                        <div class="tabs-content">
+
+                            <!--Tab-->
+                            
+
+                            <!--Tab-->
+                            <div class="tab active-tab" id="prod-Affiliates">
+                                <div class="ProductList">
+                                    <div class="row">
+                                        {% for affiliates in affiliates %}
+                                        <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                                            <div class="AffiliatesItem">
+                                                <div class="FrontFace">
+                                                    <div class="imageProd">
+                                                        <img src="{{affiliates.main_image.url}}">
+                                                    </div>
+                                                    <div class="ProductName">
+                                                        <h3>{{affiliates.title}}</h3>
+                                                    </div>
+                                                </div>
+                                                <div class="BackEndFace">
+                                                    <div class="more-info">
+                                                        <span class="second-font">
+                                                        <p class="second-font">{{affiliates.description}}</p>
+                                                        <div class="image">
+                                                            <img src="{{affiliates.chart_image.url}}" alt="aff-1" class="en-aff">
+                                                        </div>
+                                                        <div class="date">
+                                                            <span>Establishment date :</span>
+                                                            <span>{{affiliates.Date}}</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        {% endfor %}
+                                       
+    
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div class="tab " id="prod-Investments">
+                               <div class="ProductList">
+                                    <div class="row">
+                                        {% for investments in investments %}
+                                        <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                                            <div class="AffiliatesItem">
+                                                <div class="FrontFace">
+                                                    <div class="imageProd">
+                                                        <img src="{{investments.main_image.url}}">
+                                                    </div>
+                                                    <div class="ProductName">
+                                                        <h3>{{investments.title}}</h3>
+                                                    </div>
+                                                </div>
+                                                <div class="BackEndFace">
+                                                    <div class="more-info">
+                                                        <span class="second-font">
+                                                        <p class="second-font">{{investments.description}}</p>
+                                                        <div class="image">
+                                                            <img src="{{investments.chart_image.url}}" alt="aff-1" class="en-aff">
+                                                        </div>
+                                                        <div class="date">
+                                                            <span>Establishment date :</span>
+                                                            <span>{{investments.Date}}</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        {% endfor %}
+
+        
+
+
+                                   </div>
+                                </div>
+                            </div>  
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+                             
+           
+        
+ 
+        
+ 
+{% block script %}
+<!-- Initialize Swiper -->
+<script>
+    var swiper = new Swiper(".mySwiper", {
+    direction: "vertical",
+    slidesPerView: 1,
+      speed: 1000,
+    spaceBetween: 0,
+    mousewheel: true,
+      autoplay:false,
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+    });
+    </script>
+{% endblock %}
+
+
+{% endblock %}

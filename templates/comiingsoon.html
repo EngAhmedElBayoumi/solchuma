@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block style %}
+
+{% endblock %}
+
+{% block body %}
+<!---extends base.html -->
+<div class="page-wrapper">
+
+    <!-- Coming Soon -->
+    <section class="coming-soon">
+        <div class="comingovelay">
+                    <div class="content">
+            <div class="content-inner">
+                <div class="auto-container">
+                    <div class="logo"><a href="index-2.html"><img src="{% static 'images/new/logo.png' %}" alt="" /></a></div>
+                    <div class="sec-title"><h2>Coming Soon</h2></div>
+ 
+                    <!--Emailed Form-->
+                    <div class="emailed-form">
+                        <div class="text">Our Website is under construction. stay tuned for <br>something amazing!.</div>
+
+                    </div>
+                    <ul class="social-icon-two">
+                        <li><a href="#"><span class="fab fa-facebook-f"></span></a></li>
+                        <li><a href="#"><span class="fab fa-google-plus"></span></a></li>
+                        <li><a href="#"><span class="fab fa-twitter"></span></a></li>
+                        <li><a href="#"><span class="fab fa-skype"></span></a></li>
+                        <li><a href="#"><span class="fab fa-pinterest-p"></span></a></li>
+                        <li><a href="#"><span class="fab fa-linkedin"></span></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        </div>
+    </section>
+    <!-- End Coming Soon -->
+
+</div>
+
+{% block script %}
+<!-- Initialize Swiper -->
+<script>
+    var swiper = new Swiper(".mySwiper", {
+    direction: "vertical",
+    slidesPerView: 1,
+      speed: 1000,
+    spaceBetween: 0,
+    mousewheel: true,
+      autoplay:false,
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+    });
+    </script>
+{% endblock %}
+
+
+{% endblock %}

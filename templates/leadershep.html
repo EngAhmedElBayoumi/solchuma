@@ -1,0 +1,154 @@
+{% extends 'base.html' %}
+{% load static %}
+<!---extends base.html -->
+
+{% block style %}
+
+{% endblock %}
+
+{% block body %}
+        
+     
+        <!--Page Title-->
+        <section class="page-title" style="background-image:url({% static 'images/new/bg1.jpg' %})">
+            <div class="auto-container">
+                 <ul class="page-breadcrumb">
+                    <li><a href="{% url 'home:home' %}">home</a></li>
+                    <li>About</li>
+                </ul>
+                <h2>Leadership</h2>
+               
+            </div>
+        </section>
+        <!--End Page Title-->
+
+
+        
+        <div class="ProductsPage">
+            <div class="auto-container">
+                <div class="product_info_tabs">
+                    <!--Product Tabs-->
+                    <div class="prodcs_tabs tabs-box">
+                        <!--Tab Btns-->
+                        <ul class="tab-btns tab-buttons clearfix">
+                            
+                            <li data-tab="#prod-Directors" class="tab-btn active-btn">Board of Directors</li>
+                            <li data-tab="#prod-Management" class="tab-btn  ">Executive Management</li>
+                            
+                            
+                        </ul>
+
+                        <!--Tabs Container-->
+                        <div class="tabs-content">
+
+                            <!--Tab-->
+                            
+
+                            <!--Tab-->
+                            <div class="tab active-tab" id="prod-Directors">
+                                <div class="ProductList">
+                                    <div class="row">
+
+                                        {% for director in Board_of_directors %}
+                                        <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                                            <div class="DirectorItem">
+                                                <div class="DirItemCont">
+                                                    <div class="imagess">
+                                                        <img src="{{director.image.url}}">
+                                                    </div>
+                                                    <div class="DireDtata">
+                                                        <div class="forflex">
+                                                            <h2>{{director.name}}</h2>
+                                                            <p>{{director.job_profile}}</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        {% endfor %}
+                                       
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab " id="prod-Management">
+                               <div class="ProductList">
+                                    <div class="row justify-content-center" >
+
+                                        {% for manager in Management_team %}
+                                        <div class="col-lg-6 col-md-4 col-sm-6 col-xs-12">
+                                            <div class="content-inner ManagementItem fl-wrap">
+                                                <div class="content-front">
+                                                    <div class="cf-inner">
+                                                        <div class="forflex">
+                                                            <div class="bg" style="background-image: url({{manager.image.url}})"></div>
+                                                            <div class="overlay"></div>
+                                                            <div class="inner">
+                                                                <h2>{{manager.name}}</h2>
+                                                                <p>{{manager.job_profile}}</p>
+                                                            </div>
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+                                                <div class="content-back">
+                                                    <div class="cf-inner">
+                                                        <div class="inner">
+                                                            <div class="BackDatata">
+                                                                <div class="uperSection">
+                                                                    <div class="MangaImage">
+                                                                        <img src="{{manager.image.url}}">
+                                                                    </div>
+                                                                    <div class="manaDatata">
+                                                                        <h2>{{manager.name}}</h2>
+                                                                        <p>{{manager.job_profile}}</p>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="dowensction">
+                                                                    <div class="MananDescription">
+                                                                        <p>{{manager.description}}</p>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        {% endfor %}
+                                   </div>
+                                   
+                                </div>
+                            </div>  
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+                             
+           
+        
+ 
+        
+
+        {% block script %}
+        <!-- Initialize Swiper -->
+        <script>
+            var swiper = new Swiper(".mySwiper", {
+            direction: "vertical",
+            slidesPerView: 1,
+              speed: 1000,
+            spaceBetween: 0,
+            mousewheel: true,
+              autoplay:false,
+            pagination: {
+              el: ".swiper-pagination",
+              clickable: true,
+            },
+            });
+            </script>
+        {% endblock %}
+        
+        
+        {% endblock %}

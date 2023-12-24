@@ -1,0 +1,200 @@
+{% extends 'ar/base.html' %}
+{% load static %}
+
+
+{% block style %}
+    <!-- Demo styles -->
+    <style>
+
+        .swiper {
+          width: 100%;
+          height: 100vh;
+        }
+  
+        .swiper-slide {
+          text-align: start;
+          font-size: 18px;
+          background: #fff;
+  
+          /* Center slide text vertically */
+          display: -webkit-box;
+          display: -ms-flexbox;
+          display: -webkit-flex;
+          display: block;
+          -webkit-box-pack: center;
+          -ms-flex-pack: center;
+          -webkit-justify-content: center;
+          justify-content: center;
+          -webkit-box-align: center;
+          -ms-flex-align: center;
+          -webkit-align-items: center;
+          align-items: center;
+            overflow: hidden;
+        }
+  
+        .swiper-slide img {
+          display: block;
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+          .nav-toggler span{
+              background-color: #006870;
+          }
+      </style>
+{% endblock %}
+{% block body %}
+        
+
+
+        
+     
+        <!--Page Title-->
+        <section class="page-title" style="background-image:url(images/new/bg1.jpg)">
+            <div class="auto-container">
+                 <ul class="page-breadcrumb">
+                    <li><a href="index.html">الرئيسية</a></li>
+                    <li>اتصل بنا</li>
+                </ul>
+                <h2>تواصل معنا</h2>
+            </div>
+        </section>
+        <!--End Page Title-->
+
+        <div class="contactUspage">
+            <div class="auto-container">
+                <div class="row">
+                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                        <div class="rightSide">
+                            <div class="GetinTouch">
+                                <div class="titiitle">
+                                    <h2>كن على اتصال</h2>
+                                </div>
+                                <form method="post">
+                                    {% csrf_token %}
+                                    <div class="row">
+                                        <div class="col-lg-12">
+                                            <div class="form-group">
+                                                <label>الإسم<span>*</span></label>
+                                                <input type="text" class="form-control" placeholder="اسمك " name="name" required>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-12">
+                                            <div class="form-group">
+                                                <label>البريد الإلكتروني<span>*</span></label>
+                                                <input type="email" class="form-control" placeholder="بريدك الالكترونى" name="email" required>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="col-lg-4 col-md-3 col-sm-12">
+                                            <div class="form-group">
+                                                <label>الرمز الدولي</label>
+                                                <select class="form-control" name="country_code" required>
+                                                    <option>اختر </option>
+                                                    {% for country in country_code %}
+                                                    <option value="{{country.id}}">{{country.code}}-{{country.country_ar}}</option>
+                                                    {% endfor %}
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-8 ">
+                                            <div class="form-group">
+                                                <label>رقم الهاتف<span>*</span></label>
+                                                <input type="text" class="form-control" placeholder="5*************" name="phone" required>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="col-lg-12">
+                                            <div class="form-group">
+                                                <label>فحوى الرسالة<span>*</span></label>
+                                                <select class="form-control" name="message_type" required>
+                                                    <option value="" selected="selected">- اختر -</option>
+                                                    {% for message in message_type %}
+                                                    <option value="{{message.id}}">{{message.type_ar}}</option>
+                                                    {% endfor %}
+                                                </select>
+
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-12">
+                                            <div class="form-group">
+                                                <label>الموضوع<span>*</span></label>
+                                                <input type="text" class="form-control" placeholder="الموضوع"name="subject" required>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-12">
+                                            <div class="form-group">
+                                                <label>الرسالة<span>*</span></label>
+                                                <textarea class="form-control" style="height: 150px" required name="message"></textarea>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-12">
+                                            <div class="form-group">
+                                                <button type="submit" class="SendBTN">ارسل الرسالة</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                                {% if messages %}
+                                {% for message in messages %}
+                                <div class="alert alert-{{message.tags}} alert-dismissible fade show" role="alert">
+                                    {{message}}
+                                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                                </div>
+                                {% endfor %}
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                        <div class="SolChemOffices">
+                            <div class="row">
+                                {% for contact in contact_info %}
+                                <div class="col-lg-12">
+                                    <div class="infosolslschem">
+                                        <h4>{{contact.title_ar}}</h4>
+                                        <p class="mt-3">{{contact.description_ar}}</p>
+                                        <div class="infoItem my-3 mb-0">
+                                            <img src="{% static 'images/new/main-icon.svg' %}" alt="main-icon">
+                                            <a href="mailto: info@solochem.com">{{contact.email}}</a>
+                                        </div>
+                                        <div class="infoItem my-3">
+                                            <img src="{% static 'images/new/phone-icon.svg' %}" alt="phone-icon">
+                                            <a href="tel:+123 13 801 9392">{{contact.phone}}</a>
+                                        </div>
+                                        <div class="infoItem my-3">
+                                            <img src="{% static 'images/new/location.svg' %}" alt="main-icon">
+                                            <a href="#" target="_blank">
+                                                <span>{{contact.address_ar}}</span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                {% endfor %}
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+ 
+        {% block script %}
+        <script>
+          var swiper = new Swiper(".mySwiper", {
+            direction: "vertical",
+            slidesPerView: 1,
+              speed: 1000,
+            spaceBetween: 0,
+            mousewheel: true,
+              autoplay:false,
+            pagination: {
+              el: ".swiper-pagination",
+              clickable: true,
+            },
+          });
+        </script>
+        {% endblock %}
+              
+        {% endblock %}

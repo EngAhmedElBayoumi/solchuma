@@ -1,0 +1,199 @@
+{% extends 'base.html' %}
+{% load static %}
+<!---extends base.html -->
+{% block style %}
+
+{% endblock %}
+
+{% block body %}
+
+        
+     
+        <!--Page Title-->
+        <section class="page-title" style="background-image:url(images/new/bg1.jpg)">
+            <div class="auto-container">
+                 <ul class="page-breadcrumb">
+                    <li><a href="{% url 'home:home' %}">home</a></li>
+                    <li>Innovation</li>
+                </ul>
+                <h2>Innovation</h2>
+               
+            </div>
+        </section>
+        <!--End Page Title-->
+
+
+        <!-- About Section -->
+        <section class="about-section InnovationPage">
+            <div class="auto-container">
+                <div class="row">
+                    <!-- Content Column -->
+                    <div class="content-column col-lg-5 col-md-6 col-sm-12">
+                        <div class="inner-column">
+                          <div class="sec-title mb-3 pt-0">
+                                    <h2>{{content.first.section_one.title}}</h2>
+                                </div>
+                            <div class="text-box">
+                                <p>{{content.first.section_one.description}}</p>
+                            </div>
+                         
+                          
+                        </div>
+                    </div>
+
+                    <!-- Image Column -->
+                    <div class="image-column col-lg-7 col-md-6 col-sm-12">
+                        <div class="inner-column" style="    margin-top: -200px;">
+                            <div class="image-box">
+                                <img src="{{content.first.section_one.image.url}}">
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </section>
+        <!--End About Section -->
+        
+        
+        
+        <div class="CircularEconomy">
+            <div class="auto-container">
+                <h2 class="TitleCircu">{{content.first.title}}</h2>
+                <p class="TextUnderpargraph">
+                    {{content.first.description}}
+                </p>
+                    <div class="TapsCircular">
+                    <ul class="nav nav-pills nav-justified" role="tablist">
+
+                        {% for item in content.first.section_two.all %}
+                        <li class="nav-item waves-effect waves-light" >
+                            <a class="nav-link {% if forloop.first %}active{% endif %}" data-bs-toggle="tab" href="#home-{{item.id}}" role="tab">
+                                <span class="">{{item.title}}</span> 
+                            </a>
+                        </li>
+                        {% endfor %}
+                        
+
+
+                    </ul>
+
+                    <!-- Tab panes -->
+                    <div class="tab-content p-3 text-muted">
+                        {% for item in content.first.section_two.all %}
+                        <div class="tab-pane {% if forloop.first %}active{% endif %}" id="home-{{item.id}}" role="tabpanel">
+                            <p class="mb-0">
+                                {{item.description}}
+                                </p>
+                        </div>
+                        {% endfor %}
+                        
+
+                    </div>
+        
+                </div>
+            </div>
+        </div>
+       
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+
+        
+        
+
+        
+
+        
+        
+        
+        
+        
+          <div class="CaresSectionn">
+            <div class="auto-container">
+                <div class="row">
+                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                        <div class="sec-title">
+                            <h2>{{content.first.section_three.title}}</h2>
+                        </div>
+                        <div class="desdcrition">
+                            <p>{{content.first.section_three.description}}</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                        <div class="imageCareers">
+                            <div class="image">
+                                <img src="{{content.first.section_three.image.url}}">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+                <div class="feedBackSystem">
+            <div class="auto-container">
+                <div class="fedBox">
+                    <div class="forflex">
+                        <h2> Feedback System</h2>
+                        <p>Our Supplier Feedback System allows suppliers to share any feedback, question, or concern. Each request is evaluated by our SRM team, who respond with an appropriate solution in a fast and friendly manner.</p>
+                        <a href="{% url 'contact:contact'  %}">Send Us</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        {% block script %}
+        <!-- Initialize Swiper -->
+        <script>
+            var swiper = new Swiper(".mySwiper", {
+            direction: "vertical",
+            slidesPerView: 1,
+              speed: 1000,
+            spaceBetween: 0,
+            mousewheel: true,
+              autoplay:false,
+            pagination: {
+              el: ".swiper-pagination",
+              clickable: true,
+            },
+            });
+            </script>
+            <script>
+                $(document).ready(function () {
+                    // active btn
+                    $(".tab-btn").click(function () {
+                        $(".tab-btn").removeClass("active-btn");
+                        $(this).addClass("active-btn");
+                    });
+                    // active tab
+                    $(".tab-btn").click(function () {
+                        var tab_id = $(this).attr("data-tab");
+
+                        $(".tab").removeClass("active-tab");
+                        $("#" + tab_id).addClass("active-tab");
+                    });
+                });
+            </script>
+        {% endblock %}
+        
+        
+        {% endblock %}

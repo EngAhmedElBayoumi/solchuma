@@ -1,0 +1,116 @@
+{% extends 'base.html' %}
+{% load static %}
+<!---extends base.html -->
+
+{% block style %}
+
+{% endblock %}
+
+{% block body %}
+        
+     
+        <!--Page Title-->
+        <section class="page-title" style="background-image:url(images/new/bg1.jpg)">
+            <div class="auto-container">
+                 <ul class="page-breadcrumb">
+                    <li><a href="{% url 'home:home' %}">home</a></li>
+                    <li>Sustainability</li>
+                </ul>
+                <h2>Certifications</h2>
+               
+            </div>
+        </section>
+        <!--End Page Title-->
+
+
+        
+        <div class="ProductsPage">
+            <div class="auto-container">
+                <div class="product_info_tabs">
+                    <!--Product Tabs-->
+                    <div class="prodcs_tabs tabs-box">
+                        <!--Tab Btns-->
+                        <ul class="tab-btns tab-buttons clearfix">
+                            <li data-tab="#prod-Certifications" class="tab-btn active-btn">Certifications</li>
+                            <li data-tab="#prod-IMSReports" class="tab-btn  ">IMS Reports</li>
+                        </ul>
+
+                        <!--Tabs Container-->
+                        <div class="tabs-content">
+
+                            <!--Tab-->
+                            
+
+                            <!--Tab-->
+                            <div class="tab active-tab" id="prod-Certifications">
+                                <div class="certifications">
+                                    <div class="row">
+                                        {% for cert in certifications %}
+                                        <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+                                            <div class="certifItem">
+                                                <a href="{{cert.pdf.url}}">
+                                                    <span>{{cert.title}}</span>
+                                                    <span><svg width="28" height="28" viewBox="0 0 28 28" xmlns="http://www.w3.org/2000/svg">
+                                                            <defs><filter color-interpolation-filters="auto" id="a"><feColorMatrix in="SourceGraphic" values="0 0 0 0 0.007843 0 0 0 0 0.196078 0 0 0 0 0.309804 0 0 0 1.000000 0"></feColorMatrix></filter></defs><g transform="translate(-1714 -1832)" fill="none" fill-rule="evenodd"><g fill="#000" fill-rule="nonzero"><path d="M1740 1858h-24v-24h12v-2h-13a1 1 0 0 0-1 1v26a1 1 0 0 0 1 1h26a1 1 0 0 0 1-1v-13h-2v12z"></path><path d="M1732.027 1832v1.995h6.568l-11.262 11.261 1.41 1.41 11.262-11.261v6.568H1742V1832z"></path></g></g></svg>
+                                                    </span>
+                                                </a>
+                                            </div>
+                                        </div>
+                                        {% endfor %}
+                                      
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab " id="prod-IMSReports">
+                                <div class="SustainabilityReports p-0">
+                                    <div class="row">
+                                        {% for report in reports %}
+                                        <div class="col-lg-12 col-md-12 col-sm-12">
+                                            <div class="SustainabilityItem">
+                                                <h2>{{report.year}}</h2>
+                                                <a href="{{report.pdf.url}}">
+                                                    <span>{{report.title}}</span>
+                                                    <span><svg width="28" height="28" viewBox="0 0 28 28" xmlns="http://www.w3.org/2000/svg">
+                                                        <defs><filter color-interpolation-filters="auto" id="a"><feColorMatrix in="SourceGraphic" values="0 0 0 0 0.007843 0 0 0 0 0.196078 0 0 0 0 0.309804 0 0 0 1.000000 0"></feColorMatrix></filter></defs><g transform="translate(-1714 -1832)" fill="none" fill-rule="evenodd"><g fill="#000" fill-rule="nonzero"><path d="M1740 1858h-24v-24h12v-2h-13a1 1 0 0 0-1 1v26a1 1 0 0 0 1 1h26a1 1 0 0 0 1-1v-13h-2v12z"></path><path d="M1732.027 1832v1.995h6.568l-11.262 11.261 1.41 1.41 11.262-11.261v6.568H1742V1832z"></path></g></g></svg>
+                                                    </span>
+                                                </a>
+                                            </div>
+                                        </div>
+                                        {% endfor %}
+
+                                    </div>
+                                </div>
+  
+                            </div>  
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+                             
+           
+        
+ 
+        
+        
+{% block script %}
+<!-- Initialize Swiper -->
+<script>
+    var swiper = new Swiper(".mySwiper", {
+    direction: "vertical",
+    slidesPerView: 1,
+      speed: 1000,
+    spaceBetween: 0,
+    mousewheel: true,
+      autoplay:false,
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+    });
+    </script>
+{% endblock %}
+
+
+{% endblock %}

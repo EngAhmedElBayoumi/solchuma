@@ -1,0 +1,457 @@
+
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="utf-8">
+<title>SOL CHEM</title>
+<!-- Stylesheets -->
+<link href="{% static 'css/bootstrap.css' %}" rel="stylesheet">
+<link href="{% static 'Libs/select2/css/select2.min.css' %}" rel="stylesheet">
+<link href="{% static 'css/style.css' %}" rel="stylesheet">
+<link href="{% static 'css/responsive.css' %}" rel="stylesheet">
+
+<link rel="icon" href="{% static 'images/new/logoicon.png' %}" type="image/x-icon">
+
+<!-- Responsive -->
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+<!--[if lt IE 9]><script src="{% static 'https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js' %}"></script><![endif]-->
+<!--[if lt IE 9]><script src="{% static 'js/respond.js' %}"></script><![endif]-->
+    <link href="{% static 'Libs/VideoPopUp/css/jquery.fancybox.css' %}" rel="stylesheet" /> 
+        <!-- Link Swiper's CSS -->
+<!--    <link rel="stylesheet"href="{% static 'https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css' %}"/>-->
+
+    {% block style %}
+
+    {% endblock %}
+
+</head>
+
+<body>
+
+<div class="page-wrapper">
+    <!-- Preloader -->
+    <div class="preloader"></div>
+
+    <!-- Sidenav Bar -->
+    <section class="sidenav-bar">
+        <div class="nav-box">
+            <div class="inner-box">
+                <div class="upper-box">
+                    <div class="btn-box"><button class="close-btn"><span class="fa fa-times"></span></button></div>
+                </div>
+
+                <!-- .Side Nav -->
+                <nav class="side-nav">
+                    <ul class="navigation clearfix" id="nav">
+                        <li class="current"><a href="{% url 'home:home' %}"> Home </a>
+                        <li class="dropdown"><a> About </a>
+                            <ul>
+                                <li><a href="About.html">About Sipchem</a></li>
+                                <li><a href="{% url 'about:affiliates' %}">Affiliates</a></li>
+                                <li><a href="{% url 'about:leadership' %}">Leadership</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="dropdown"><a>Products</a>
+                            <ul>
+                                {% for category in all_categories %}
+                                <li><a href="{% url 'products:products_by_category' category.id %}">{{category.title}} - {{category.id}}</a></li>
+                                {% endfor %}
+                            </ul>
+                        </li>
+                        <li><a href="{% url 'suppliers:subliers' %}"> Suppliers </a></li>
+                        <li class="dropdown"><a>Sustainability</a>
+                            <ul>
+                                <li><a href="{% url 'sustainability:esg_environment' %}">ESG</a></li>
+                                <li><a href="{% url 'sustainability:csr' %}">CSR</a></li>
+                                <li><a href="{% url 'sustainability:sustainability_reports' %}">Sustainability Reports</a></li>
+                                <li><a href="{% url 'sustainability:certifications' %}">Certifications</a></li>
+                                <li><a href="{% url 'sustainability:certifications' %}">IMS Compliance</a></li>
+
+                            </ul>
+                        </li>
+                        <li class="dropdown"><a>Innovation </a>
+                            <ul>
+                                <li><a href="{% url 'innovation:digital_transformation' %}">Digital Transformation</a></li>
+                                <li><a href="{% url 'innovation:research_and_development' %}">Research and Development</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="{% url 'contact:contact'  %}"> Contact Us </a></li>
+                    </ul> 
+                </nav><!-- /.Side-menu -->
+
+            </div>
+        </div>
+    </section>
+    <!--End Sidenav Bar -->
+
+    <!-- Start Main Content -->
+    <main id="content">
+
+        <!-- Main Header-->
+        <header class="main-header header-style-two">
+
+            <div class="outer-container">
+                <div class="main-box clearfix">
+                    <div class="logo-box">
+                        <div class="logo"><a href="{% url 'home:home' %}"><img src="{% static 'images/new/logo.png' %}" alt="" title=""></a></div>
+                    </div>
+
+                    <div class="nav-outer">
+
+                        <!-- Main Menu -->
+                        <nav class="main-menu navbar-expand-md navbar-light">
+                            <div class="collapse navbar-collapse clearfix" id="navbarSupportedContent">
+                                <ul class="navigation clearfix">
+                                    <li class="current"><a href="{% url 'home:home' %}"> Home </a>
+                        <li class=" dropdown"><a> About </a>
+                            <ul>
+                                <li><a href="{% url 'about:about_sipchem' %}">About Sipchem</a></li>
+                                <li><a href="{% url 'about:affiliates' %}">Affiliates</a></li>
+                                <li><a href="{% url 'about:leadership' %}">Leadership</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="dropdown"><a>Products</a>
+                            <ul>
+                                {% for category in all_categories %}
+                                <li><a href="{% url 'products:products_by_category' category.id %}">{{category.title}} - {{category.id}}</a></li>
+                                {% endfor %}
+                            </ul>
+                        </li>
+                        <li><a href="{% url 'suppliers:subliers' %}"> Suppliers </a></li>
+                        <li class="dropdown"><a>Sustainability</a>
+                            <ul>
+                                <li><a href="{% url 'sustainability:esg_environment' %}">ESG</a></li>
+                                <li><a href="{% url 'sustainability:csr' %}">CSR</a></li>
+                                <li><a href="{% url 'sustainability:sustainability_reports' %}">Sustainability Reports</a></li>
+                                <li><a href="{% url 'sustainability:certifications' %}">Certifications</a></li>
+                                <li><a href="{% url 'sustainability:certifications' %}">IMS Compliance</a></li>
+
+                            </ul>
+                        </li>
+                        <li class="dropdown"><a>Innovation </a>
+                            <ul>
+                                <li><a href="{% url 'innovation:digital_transformation' %}">Digital Transformation</a></li>
+                                <li><a href="{% url 'innovation:research_and_development' %}">Research and Development</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="{% url 'contact:contact'  %}"> Contact Us </a></li>
+                                </ul> 
+
+                            </div>
+                        </nav>
+                        <!-- Main Menu End-->
+
+                        <div class="outer-box clearfix">
+                           
+                            <!-- Btn box -->
+                            <div class="btn-box no-touch"><button class="nav-toggler"><span></span></button></div>
+                        </div>
+
+                        <div class="outer-box clearfix">
+                            <div class="language">
+                                         <a title="AR" onclick="change_language()">AR <span></span></a>
+                                     </div>
+                             <!-- Btn box -->
+                             <div class="btn-box no-touch"><button class="nav-toggler"><span></span></button></div>
+                         </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!--End Main Header -->
+{% block body %}
+
+{% endblock %}
+
+
+
+
+<div class="swiper-slide">
+            
+            
+    <!-- ============================ Footer Start ================================== -->
+    <footer class="skin-light-footer style-2">
+        
+        <div class="overlay">
+            <div class="footer-middle">
+            <div class="auto-container">
+                <div class="row">
+                    
+                    <div class="col-lg-4 col-md-5">
+                        <div class="footer_widget">
+                            <img src="{% static 'images/new/logo.png' %}" class="img-footer small mb-2" alt="" />
+                            <p>Receive updates, hot deals, tutorials, discounts sent straignt in your inbox every month</p>
+                            
+                        </div>
+                    </div>
+                    
+                    <div class="col-lg-8 col-md-7 ml-auto">
+                        <div class="row">
+                        
+                            <div class="col-lg-4 col-md-4">
+                                <div class="footer_widget">
+                                    <h4 class="widget_title">Media Center</h4>
+                                    <ul class="footer-menu">
+                                        <li><a href="{% url 'news:news' %}">News</a></li>
+                                    <li><a href="{% url 'gallary:gallary' %}">Gallary</a></li>
+                                    <li><a href="{% url 'journalist:journalist_registration' %}">Journalist Registration</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                                    
+                            <div class="col-lg-4 col-md-4">
+                                <div class="footer_widget">
+                                    <h4 class="widget_title">Main Links</h4>
+                                    <ul class="footer-menu" style="column-count: 2;">
+                                    <li><a href="{% url 'home:home' %}">Home</a></li>
+                                    <li><a href="About.html">About </a></li>
+                                    <li><a href="{% url 'suppliers:subliers' %}"> Suppliers </a></li>
+                                    <li><a href="{% url 'sustainability:esg_environment' %}"> Sustainability </a></li>
+                                    <li><a href="Digital_Transformation.html"> Innovation  </a></li>
+                                    <li><a href="{% url 'contact:contact'  %}"> Contact Us  </a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                    
+                            <div class="col-lg-4 col-md-4">
+                                <div class="footer_widget">
+                                    <h4 class="widget_title">Terms & policy</h4>
+                                    <ul class="footer-menu">
+                                        <li><a href="{% url 'home:policy' %}">Privacy practices</a></li> 
+                                        <li><a href="{% url 'home:policy' %}">Terms & Conditions</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        </div>
+        
+        
+        <div class="footer-bottom br_light">
+            <div class="auto-container">
+                <div class="row align-items-center">
+                    <div class="col-lg-12 col-md-12 text-center">
+                        <p class="mb-0">© Copyright 2023 SOL CHEM All Rights Reserved.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- ============================ Footer End ================================== -->
+
+</div>
+</div>
+<div class="swiper-pagination"></div>
+</div>
+
+
+
+
+
+
+
+
+                     
+   
+
+
+
+
+
+
+
+
+
+
+<div class="AllfooterHome d-none" style="background-image: url({% static 'images/NewImags/ContactBG.png' %})">
+    <div class="contactUs pb-0 pt-3">
+        <div class="auto-container">
+            <div class="SectionTitle text-center">
+                <h2 class="MainTitle">Talk to Us </h2>
+            </div>
+            <div class="ContactFrom">
+                <form action="#" method="post">
+                    <div class="row">
+                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                            <div class="form-group">
+                                <label>Name<span>*</span></label>
+                                <input type="text" class="form-control" required>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                            <div class="form-group">
+                                <label>Mobile<span>*</span></label>
+                                <input type="text" class="form-control" required>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                            <div class="form-group">
+                                <label>Project<span>*</span></label>
+                                <select class="form-control">
+                                    <option>Select Project</option>
+                                    <option>Armonia </option>
+                                    <option> IL Bayou</option>
+                                    <option>Armonia Walk</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                            <div class="form-group">
+                                <label>Email</label>
+                                <input type="email" class="form-control">
+                            </div>
+                        </div>
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                            <div class="form-group">
+                                <label>Message</label>
+                                
+                                <textarea class="form-control"></textarea>
+                            </div>
+                        </div>
+                        <div class="col-lg-12 col-md-12 col-sm-12 form-group">
+                                    <button class="theme-btn btn-style-one" style="display: block;margin: auto" type="submit" name="submit-form"><span class="btn-title">Send Message</span></button>
+                                </div>
+                    </div>
+                
+                </form>
+            </div>
+        </div>
+    </div>
+ 
+    
+    
+    <div class="footerNew pt-1">
+    <div class="auto-container">
+        <div class="row">
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                <div class="logoFooter">
+                    <a href="#">
+                        <img src="{% static 'images/NewImags/TLD_LOGOwhite.png' %}">
+                    </a>
+                </div>
+                <div class="Address">
+                    <p>AG6, Old Town, Sahl Hasheesh, Red Sea</p>
+                    <p>S1 B - 3rd floor, Downtown Kattamya, New Cairo</p>
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                <div class="FooterInfo">
+                    <div class="hotcinsocial">
+                        <div class="hotline">
+                            <div class="iconhot">
+                                <span><i class="fa fa-headset"></i></span>
+                            </div>
+                            <div class="hotInfo">
+                                <span>Call Us</span>
+                                <h2>16170</h2>
+                            </div>
+                        </div>
+                        
+                        <div class="socila">
+                            <ul>
+                                <li>
+                                    <a href="https://web.facebook.com/TheLandDevelopers" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                                </li>
+                                <li>
+                                    <a href="https://www.linkedin.com/company/thelanddevelopers/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                                </li>
+                                <li>
+                                    <a href="https://www.instagram.com/thelanddevelopers.eg/" target="_blank"><i class="fab fa-instagram"></i></a>
+                                </li>
+                                <li>
+                                    <a href="https://www.youtube.com/@tld-thelanddevelopers5235" target="_blank"><i class="fab fa-youtube"></i></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="CipyRight">
+                    <p>2022 - All Rights Reserved | TLD - the land development</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+ 
+
+                </div>
+
+
+
+
+
+
+</main>
+<!-- End Main Content -->
+</div>
+
+
+<div class="scroll-to-top scroll-to-target" data-target="html"><span class="fa fa-angle-up"></span></div>
+
+<script src="{% static 'js/jquery.js' %}"></script> 
+<script src="{% static 'Libs/VideoPopUp/js/jquery-plugin-collection.js' %}"></script>
+<script src="{% static 'Libs/VideoPopUp/js/script.js' %}"></script>
+
+<script src="{% static 'js/popper.min.js' %}"></script>
+<script src="{% static 'js/bootstrap.min.js' %}"></script>
+<script src="{% static 'js/owl.js' %}"></script>
+<script src="{% static 'js/wow.js' %}"></script>
+<script src="{% static 'Libs/select2/js/select2.min.js' %}"></script>
+<script src="{% static 'Libs/select2/form-advanced.init.js' %}"></script>
+<script src="{% static 'js/appear.js' %}"></script>
+<script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
+
+<script src="{% static 'js/jquery.fancybox.js' %}"></script>
+
+<script src="{% static 'js/jquery.mCustomScrollbar.concat.min.js' %}"></script>
+<script src="{% static 'js/swiper.min.js' %}"></script>
+<script src="{% static 'js/jquery.stellar.min.js' %}"></script>
+<script src="{% static 'js/TweenMax.min.js' %}"></script>
+<script src="{% static 'js/script.js' %}"></script>
+
+<script>
+    function change_language()
+    {
+        console.log('change language');
+        // get url
+        var url = window.location.href;
+        console.log(url);
+        // replace en with ar
+        if (url.includes('/en/')){
+            url = url.replace('/en/', '/ar/');
+            window.location.href = url;
+        }else{
+            // url = host 
+            url = url.replace(window.location.host, window.location.host + '/ar');
+            window.location.href = url;
+        }
+            
+        
+        // reload page
+    }
+</script>
+
+
+<!-- Swiper JS -->
+<!--    <script src="{% static 'https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js' %}"></script>-->
+
+{% block script %}
+
+{% endblock %}
+
+
+</body>
+
+</html>

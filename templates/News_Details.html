@@ -1,0 +1,153 @@
+{% extends 'base.html' %}
+{% load static %}
+<!---extends base.html -->
+
+
+{% block style %}
+
+{% endblock %}
+
+{% block body %}  
+     
+        <!--Page Title-->
+        <section class="page-title" style="background-image:url(images/new/bg1.jpg)">
+            <div class="auto-container">
+                 <ul class="page-breadcrumb">
+                    <li><a href="{% url 'home:home' %}">home</a></li>
+                    <li>Media Center</li>
+                    <li>News</li>
+                </ul>
+                <h2>News Details</h2>
+               
+            </div>
+        </section>
+        <!--End Page Title-->
+
+
+        <!-- About Section -->
+        <section class="about-section InnovationPage">
+            <div class="auto-container">
+                <div class="row">
+                    <!-- Content Column -->
+                    <div class="content-column col-lg-6 col-md-6 col-sm-12">
+                        <div class="inner-column">
+                          <div class="sec-title mb-3 pt-0">
+                              <p class="mb-1">18 May 2023</p>
+                                    <h2 style="font-size: 30px">Sipchem concludes its participation as a titanium sponsor in the 14th GPCA Supply Chain Conference. </h2>
+                                </div>
+                        </div>
+                    </div>
+
+                    <!-- Image Column -->
+                    <div class="image-column col-lg-6 col-md-6 col-sm-12">
+                        <div class="inner-column" style="    margin-top: -200px;">
+                            <div class="image-box">
+                                <img src="{% static 'images/new/D0103560.jpg' %}">
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </section>
+        <!--End About Section -->
+
+               <div class="Reducing pt-0 pb-3">
+            <div class="auto-container">
+                <div class="ReducingContent">
+                    <p>As part of its continuous efforts to support the readiness of the petrochemical industry for the future, Sipchem concludes its participation as a titanium sponsor in  the Gulf Petrochemicals and Chemicals Association (GPCA) Conference for Supply Chain in its fourteenth edition, which was held in Al-Khobar during May 16–17, 2023. The conference was attended by Vice President of Shared Services, Eng. Omar Bahobail, and the Sipchem supply chain team.</p>
+                    <p>The conference included many workshops and discussion sessions in which several leaders in the fields of petrochemical industry, transportation, and logistics services participated, experiences were exchanged, and avenues of cooperation between companies in the field of supply chain were explored.</p>
+                    <p>Among its other notable achievements, Sipchem received the "Excellence in Sustainability" award, this achievement was a clear outcome of Sipchem's commitment to environmental preservation as it has successfully converted their wooden Pallets; that are used for polymer product packaging, to Multi-used Recycled Plastic Pallets, in accordance with the sustainable business objectives of the Kingdom's Vision 2030.</p>
+                </div>
+                
+                
+                <div class="imageNewsGalllary">
+                    <div class="row">
+                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                            <div class="ImageItem">
+                                <figure class="image"><a href="images/new/nwsgallary1.jpg" class="lightbox-image"><img src="{% static 'images/new/nwsgallary1.jpg' %}" alt=""></a></figure>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                            <div class="ImageItem">
+                                <figure class="image"><a href="images/new/newsGallary2.jpg" class="lightbox-image"><img src="{% static 'images/new/newsGallary2.jpg' %}" alt=""></a></figure>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+                <div class="NewsPage pt-0">
+            <div class="auto-container">
+                <div class="NewsSearch mb-2">
+                    <h2>Latest News</h2>
+                </div>
+                
+                <div class="row">
+                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                        <div class="NewssItem">
+                            <div class="image">
+                                <img src="{% static 'images/new/D0103560.jpg' %}">
+                            </div>
+                            <div class="NwsDatat">
+                                <p>18 May 2023</p>
+                                <h2>
+                                    <a href="{% url 'news:news_details' 1 %}">SolChem concludes its participation as a titanium sponsor in the 14th GPCA Supply Chain Conference.</a>
+                                </h2>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                        <div class="NewssItem">
+                            <div class="image">
+                                <img src="{% static 'images/new/nwes2.jpg' %}">
+                            </div>
+                            <div class="NwsDatat">
+                                <p>18 May 2023</p>
+                                <h2>
+                                    <a href="{% url 'news:news_details' 1 %}">SolChem concludes its participation as a titanium sponsor in the 14th GPCA Supply Chain Conference.</a>
+                                </h2>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                        <div class="NewssItem">
+                            <div class="image">
+                                <img src="{% static 'images/new/news3.jpg' %}">
+                            </div>
+                            <div class="NwsDatat">
+                                <p>18 May 2023</p>
+                                <h2>
+                                    <a href="{% url 'news:news_details' 1 %}">SolChem concludes its participation as a titanium sponsor in the 14th GPCA Supply Chain Conference.</a>
+                                </h2>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+			
+  
+{% block script %}
+<!-- Initialize Swiper -->
+<script>
+    var swiper = new Swiper(".mySwiper", {
+    direction: "vertical",
+    slidesPerView: 1,
+      speed: 1000,
+    spaceBetween: 0,
+    mousewheel: true,
+      autoplay:false,
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+    });
+    </script>
+{% endblock %}
+
+
+{% endblock %}

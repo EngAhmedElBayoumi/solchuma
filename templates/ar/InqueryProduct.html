@@ -1,0 +1,188 @@
+{% extends 'ar/base.html' %}
+{% load static %}
+
+
+{% block style %}
+    <!-- Demo styles -->
+    <style>
+
+        .swiper {
+          width: 100%;
+          height: 100vh;
+        }
+  
+        .swiper-slide {
+          text-align: start;
+          font-size: 18px;
+          background: #fff;
+  
+          /* Center slide text vertically */
+          display: -webkit-box;
+          display: -ms-flexbox;
+          display: -webkit-flex;
+          display: block;
+          -webkit-box-pack: center;
+          -ms-flex-pack: center;
+          -webkit-justify-content: center;
+          justify-content: center;
+          -webkit-box-align: center;
+          -ms-flex-align: center;
+          -webkit-align-items: center;
+          align-items: center;
+            overflow: hidden;
+        }
+  
+        .swiper-slide img {
+          display: block;
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+          .nav-toggler span{
+              background-color: #006870;
+          }
+      </style>
+{% endblock %}
+{% block body %}
+        
+
+
+        
+     
+        <!--Page Title-->
+        <section class="page-title" style="background-image:url(images/new/bg1.jpg)">
+            <div class="auto-container">
+                 <ul class="page-breadcrumb">
+                    <li><a href="index.html">الرئيسية</a></li>
+                    <li>استفسار عن منتج</li>
+                </ul>
+                <h2>استفسار عن منتج</h2>
+               
+            </div>
+        </section>
+        <!--End Page Title-->
+
+        <div class="ProductInquuiryPage">
+            <div class="auto-container">
+                <form action="#" method="post">
+                    <div class="formInquiry">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <h2>المعلومات الشخصية</h2>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="form-group">
+                                    <label>الاسم <span>*</span></label>
+                                    <input type="text" class="form-control" placeholder="الاسم">
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="form-group">
+                                    <label>الشركة <span>*</span></label>
+                                    <input type="text" class="form-control" placeholder="الشركة">
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="form-group">
+                                    <div class="row">
+                                        <div class="col-lg-6">
+                                            <label>كود البلد<span>*</span></label>
+                                            <select class="form-control">
+                                                <option>اختر</option>
+                                                <option>Egypt</option>
+                                                <option>KSA</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <label>رقم الجوال <span>*</span></label>
+                                            <input type="text" class="form-control" placeholder="1********">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="form-group">
+                                    <label>البريد الإلكتروني <span>*</span></label>
+                                    <input type="email" class="form-control" placeholder="البريد الإلكتروني">
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="form-group">
+                                    <label>البلد <span>*</span></label>
+                                    <select class="form-control">
+                                        <option>اختر</option>
+                                        <option>Egypt</option>
+                                        <option>KSA</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-lg-12">
+                                <h2>معلومات المنتج</h2>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="form-group">
+                                    <label>
+                                        فئة المنتج <span>*</span></label>
+                                    <select class="form-control">
+                                        <option>اختر</option>
+                                        <option>المواد الكيميائية</option>
+                                        <option>البوليمرات</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="form-group">
+                                    <label>اسم منتج البوليمر <span>*</span></label>
+                                    <select class="form-control">
+                                        <option>اختر</option>
+                                        <option>اسم المتج</option>
+                                        <option>اسم المنتج</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-lg-12">
+                                <div class="form-group">
+                                    <label>العنوان <span>*</span></label>
+                                    <input type="txt" class="form-control" placeholder="العنوان">
+                                </div>
+                            </div>
+                            <div class="col-lg-12">
+                                <div class="form-group">
+                                    <label>تفاصيل الاستفسار <span>*</span></label>
+                                    <textarea rows="4" style="height: 150px" class="form-control" placeholder="تفاصيل الاستفسار"></textarea>
+                                </div>
+                            </div>
+                            <div class="col-lg-12 ProductInQery">
+                                <div class="btn-box">
+                                    <a href="InqueryProduct.html" class="theme-btn btn-style-two">
+                                        <span class="btn-title">استفسار عن منتج</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        
+        
+        
+ 
+  {% block script %}
+  <script>
+    var swiper = new Swiper(".mySwiper", {
+      direction: "vertical",
+      slidesPerView: 1,
+        speed: 1000,
+      spaceBetween: 0,
+      mousewheel: true,
+        autoplay:false,
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+    });
+  </script>
+  {% endblock %}
+        
+  {% endblock %}
