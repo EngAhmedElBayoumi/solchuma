@@ -26,7 +26,7 @@ class Section_two(models.Model):
     title_ar = models.CharField(max_length=50)
     description = models.TextField(null=True,blank=True)
     description_ar = models.TextField(null=True,blank=True)
-    reports=models.ManyToManyField(Reports)
+    reports=models.ManyToManyField(Reports,null=True,blank=True)
     def __str__(self):
         return self.title
     

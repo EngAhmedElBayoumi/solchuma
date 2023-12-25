@@ -36,7 +36,7 @@ class Digital_transformation(models.Model):
     description=models.TextField()
     description_ar=models.TextField()
     #many to many
-    section_two=models.ManyToManyField(Section_two)
+    section_two=models.ManyToManyField(Section_two,null=True,blank=True)
     section_three=models.ForeignKey(Section_three,on_delete=models.CASCADE)
     def __str__(self):
         return self.title
@@ -79,13 +79,13 @@ class Section_four_research(models.Model):
 
 class Research_and_development(models.Model):
     section_one=models.ForeignKey(Section_one_research,on_delete=models.CASCADE)
-    section_two=models.ManyToManyField(Section_four_research)
+    section_two=models.ManyToManyField(Section_four_research,null=True,blank=True)
     title=models.CharField(max_length=100)
     title_ar=models.CharField(max_length=100)
     description=models.TextField()
     description_ar=models.TextField()
     #many to many
-    section_three=models.ManyToManyField(Section_two_research)
+    section_three=models.ManyToManyField(Section_two_research,null=True,blank=True)
     section_foure=models.ForeignKey(Section_three_research,on_delete=models.CASCADE)
     def __str__(self):
         return self.title
