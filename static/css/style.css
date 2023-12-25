@@ -10703,7 +10703,7 @@ font-size: 15px;
     font-size: 17px;
     line-height: 30px;
     font-weight: 500;
-    color: #ffffff;
+    color: #ffffff !important;
     padding: 0px 10px;
     margin-top: 19px;
     opacity: 1;
@@ -11769,7 +11769,7 @@ content: '';
 /*    border-radius: 0 105px 0 0;*/
 }
 .N_NewsEvent .news-block .inner-box:hover .image img{
-    transform: scale(1;)
+    transform: scale(1);
 }
 .N_NewsEvent .news-block .inner-box:hover .image a img {
     opacity: 1;
@@ -15653,7 +15653,7 @@ position: relative;
     position: relative;
     font-size: 17px;
     line-height: 30px;
-    color: #fff;
+    color: #fff !important;
     padding: 0 10px;
     margin-top: 19px;
     opacity: 1;
@@ -15708,7 +15708,281 @@ position: relative;
 
 
 
+@media(max-width:768px){
+	.statiscSection .overlay{
+		padding-left: 15px;
+		padding-right: 15px;
+	}
+	.statiscSection .sctiontititle .main-title {
+		font-size: 30px;
+	}
+	.statiscSection .statisticItems .Statitm {
+		margin-top: 20px;
+	}
+	.statiscSection .statisticItems .Statitm .irttSTarDate .NumberCOunt .number .stat-num {
+		font-size: 50px;
 
+	}
+	.swiper-container-vertical>.swiper-pagination-bullets {
+		padding: 2px 5px;
+		left: 5px;
+	}
+	.swiper-container-vertical>.swiper-pagination-bullets .swiper-pagination-bullet {
+		margin: 10px 0;
+		width: 10px;
+		height: 10px;
+	}
+	.ProductsSection .sctiontititle .main-title {
+		font-size: 30px;
+	}
+	.ProductsSection .ProductsItems .ProdItem {
+		font-size: 25px;
+		line-height: 42px;
+		padding: 20px;
+		height: 80px;
+		margin-bottom: 15px;
+	}
+	.InvestSection .sctiontititle .main-title{
+		font-size: 30px;
+	}
+	.InvestSection .InvesorItems {
+		margin-top: 20px;
+	}
+	.InvestSection .InvesorItems .investItem {
+		margin-bottom: 15px;
+	}
+	.InvestSection .InvesorItems .investItem h2 {
+		font-size: 30px;
+	}
+	.SUSTAINABILITYSection .sctiontititle .main-title{
+		font-size: 30px;
+	}
+	.ShapingItems {
+		margin-top: 30px;
+	}
+	.ShapingItems .ShapeItem {
+		width: 100%;
+		margin: auto;
+		margin-bottom: 15px;
+	}
+	.ShapingItems .ShapeItem .images {
+		position: relative;
+		margin: 5px 25px;
+		width: 40px;
+		height: 40px;
+		padding: 5px;
+	}
+	.ShapingItems .ShapeItem .nmamem h2{
+		font-size: 23px;
+	}
+	.CareersSection .overlay {
+		padding-left: 15px;
+		padding-right: 15px;
+		padding-top: 111px;
+	}
+	.CareersSection .sctiontititle .main-title {
+		font-size: 30px;
+	}
+	.CareersSection .sctiontititle {
+		margin-top: 0;
+	}
+	.CareersSection .FimeMor {
+		margin-top: 20px;
+	}
+	.CareersSection .sctiontititle .main-title{
+		margin-bottom: 0;
+	}
+	.CareersSection .career-cards {
+		height: 195px;
+		margin-top: 30px;
+	}
+	.CareersSection .FimeMor a {
+		padding: 9px 50px;
+		font-size: 18px;
+	}
+	.CareersSection .career-cards span {
+		left: 10px;
+		color: #fff;
+	}
+	.footer_widget ul li{
+		margin-top: 5px;
+	}
+	img.img-footer.small {
+		margin: 0;
+		max-width: 200px;
+	}
+	.footer-bottom.br_light {
+		padding: 16px 0;
+	}
+	.footer-bottom.br_light p {
+		font-size: 15px;
+	}
+	.nav-toggler span {
+		background-color: #000000 !important;
+	}
+	.banner-section .swiper-slide h3{
+		line-height: 35px;
+	}
+	.sidenav-bar{
+		background-color: #fd9144;
+	}
+	.page-title {
+    padding: 120px 0 30px !important;
+}
+.services-section-two, .about-section, .welcome-section, .faq-section, .sidebar-page-container, .main-footer .widgets-section, .about-us {
+    padding: 35px 0 20px !important;
+}
+.about-me .info-column .inner-column {
+    position: relative;
+    left: 0;
+    top: 0;
+    right: 0;
+}
+.ProductsPage .product_info_tabs .prodcs_tabs .tab-btns .tab-btn{
+	display: block;
+	width: 100%;
+}
+.AffiliatesItem {
+    height: 800px;
+}
+.ManagementItem .cf-inner {
+    padding: 15px;
+}
+.ManagementItem .BackDatata .dowensction{
+	display: block;
+    height: 385px;
+    overflow: auto;
+}
+.ManagementItem .BackDatata .uperSection .manaDatata h2 {
+    font-size: 20px;
+    color: #000;
+}
+.ProductInquuiryPage .formInquiry {
+    padding: 15px;
+    background: #f9f9f9;
+    width: 100%;
+    margin: auto;
+    border: 1px solid #eee;
+    border-radius: 10px;
+}
+.Procurement_Terms .Terms_Data h2{
+	font-size: 30px;
+}
+.about-section .image-column {
+    position: relative;
+    margin-bottom: 0;
+}
+.Procurement_Terms .reports h2{
+	font-size: 30px;
+}
+.Procurement_Terms {
+    padding: 0;
+}
+.feedBackSystem .fedBox {
+    padding: 35px 15px;
+}
+.feedBackSystem .fedBox h2 {
+    font-size: 25px;
+}
+.feedBackSystem .fedBox a {
+    height: 50px;
+    line-height: 50px;
+}
+.feedBackSystem {
+    padding: 50px 0;
+    padding-bottom: 50px;
+}
+.ESGPage .LinksUrlUper ul li {
+    display: block;
+    margin: 0;
+    margin-right: 0;
+    border-bottom: 1px solid #ddd;
+}
+.ESGPage .LinksUrlUper ul li a {
+    font-size: 25px;
+    font-weight: 500;
+    color: #cbcbcb;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    display: block;
+    border-bottom: 2px solid #f000;
+    margin-bottom: 0;
+}
+.ESGPage .LinksUrlUper ul {
+    border-bottom: 0px solid #ccc;
+}
+.Reducing {
+    padding: 15px 0;
+}
+.Reducing .ReducingContent h2{
+	font-size: 25px;
+}
+.CircularEconomy .TapsCircular .nav-pills {
+    display: block;
+}
+.CircularEconomy .TapsCircular .nav-pills .nav-item .nav-link {
+    border-radius: 0;
+    height: 60px;
+    line-height: 60px;
+}
+.CircularEconomy .TapsCircular .nav-pills .nav-item {
+    margin: 5px 0;
+}
+.CircularEconomy {
+    padding: 20px 0;
+}
+.CircularEconomy .TapsCircular .tab-content {
+    margin: 0;
+    padding: 0 !important;
+}
+.CircularEconomy .TapsCircular .tab-content .tab-pane {
+    background: #fba141;
+    padding: 20px;
+}
+.CircularEconomy .TapsCircular .nav-pills .nav-item .nav-link.active {
+    background: #fba141;
+    height: 60px;
+    line-height: 60px;
+}
+.inner-column{
+	margin-top: 0 !important;
+}
+.contactUspage .rightSide .GetinTouch{
+	padding: 15px;
+}
+.contactUspage .rightSide .GetinTouch .titiitle h2 {
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+.NewsPage .NewsSearch form {
+    display: flex;
+    width: 100%;
+}
+.NewsPage .NewsSearch form button {
+    width: 100px;
+}
+.NewsPage .NewsSearch form input {
+    width: calc(100% - 100px);
+}
+.GallaryPage .GallarySearch form{
+	width: 100%;
+}
+.GallaryPage .GallarySearch form input {
+    width: calc(100% - 100px);
+}
+.GallaryPage .GallarySearch form button {
+    width: 100px;
+}
+.NewsPage .NewssItem .NwsDatat a {
+    font-weight: 400;
+    color: #000;
+    font-size: 18px;
+    line-height: 28px;
+    transition: all .2s ease-in-out;
+    display: block;
+    width: 100%;
+}
+}
 
 
 
