@@ -45,8 +45,8 @@
                         <li class=" dropdown"><a> حول </a>
                             <ul>
                                 <li><a href="{% url 'about:about_sipchem_ar' %}">عن صول كيم</a></li>
-                                <li><a href="{% url 'about:affiliates_ar' %}">الشركات التابعة</a></li>
-                                <li><a href="{% url 'about:leadership_ar' %}">القيادة</a></li>
+                                {% comment %} <li><a href="{% url 'about:affiliates_ar' %}">الشركات التابعة</a></li>
+                                <li><a href="{% url 'about:leadership_ar' %}">القيادة</a></li> {% endcomment %}
                             </ul>
                         </li>
 
@@ -61,8 +61,8 @@
                         <li class="dropdown"><a>الاستدامة</a>
                             <ul>
                                 <li><a href="{% url 'sustainability:esg_environment_ar' %}">البيئة، المجتمع والحوكمة</a></li>
-                                <li><a href="{% url 'sustainability:csr_ar' %}">برامج المسؤولية المجتمعية للشركات</a></li>
-                                <li><a href="{% url 'sustainability:sustainability_reports_ar' %}">تقارير الاستدامة</a></li>
+                                {% comment %} <li><a href="{% url 'sustainability:csr_ar' %}">برامج المسؤولية المجتمعية للشركات</a></li>
+                                <li><a href="{% url 'sustainability:sustainability_reports_ar' %}">تقارير الاستدامة</a></li> {% endcomment %}
                                 <li><a href="{% url 'sustainability:certifications_ar' %}">الشهادات</a></li>
                                 <li><a href="{% url 'sustainability:certifications_ar' %}">نظام الإدارة المتكاملة</a></li>
 
@@ -119,8 +119,8 @@
                         <li class="dropdown"><a>الاستدامة</a>
                             <ul>
                                 <li><a href="{% url 'sustainability:esg_environment_ar' %}">البيئة، المجتمع والحوكمة</a></li>
-                                <li><a href="{% url 'sustainability:csr_ar' %}">برامج المسؤولية المجتمعية للشركات</a></li>
-                                <li><a href="{% url 'sustainability:sustainability_reports_ar' %}">تقارير الاستدامة</a></li>
+                                {% comment %} <li><a href="{% url 'sustainability:csr_ar' %}">برامج المسؤولية المجتمعية للشركات</a></li>
+                                <li><a href="{% url 'sustainability:sustainability_reports_ar' %}">تقارير الاستدامة</a></li> {% endcomment %}
                                 <li><a href="{% url 'sustainability:certifications_ar' %}">الشهادات</a></li>
                                 <li><a href="{% url 'sustainability:certifications_ar' %}">نظام الإدارة المتكاملة</a></li>
 
@@ -179,7 +179,7 @@
 							<div class="col-lg-8 col-md-7 ml-auto">
 								<div class="row">
 								
-									<div class="col-lg-4 col-md-4">
+									{% comment %} <div class="col-lg-4 col-md-4">
 										<div class="footer_widget">
 											<h4 class="widget_title">المركز الإعلامي</h4>
 											<ul class="footer-menu">
@@ -188,9 +188,9 @@
                                             <li><a href="{% url 'journalist:journalist_registration_ar' %}">التسجيل الصحفي</a></li>
 											</ul>
 										</div>
-									</div>
+									</div> {% endcomment %}
 											
-									<div class="col-lg-4 col-md-4">
+									<div class="col-lg-4 col-md-6">
 										<div class="footer_widget">
 											<h4 class="widget_title">اهم اللينكات</h4>
 											<ul class="footer-menu" style="column-count: 2;">
@@ -204,7 +204,7 @@
 										</div>
 									</div>
 							
-									<div class="col-lg-4 col-md-4">
+									<div class="col-lg-4 col-md-6">
 										<div class="footer_widget">
 											<h4 class="widget_title">الشروط & الخصوصيات</h4>
 											<ul class="footer-menu">

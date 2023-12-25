@@ -2,7 +2,7 @@
 - clone the repo
 - run
 
-`` python -m venv env ``
+` python -m venv env `
 
 ``` env\Scripts\activate  ```
 

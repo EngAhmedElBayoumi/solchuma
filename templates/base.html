@@ -111,8 +111,8 @@
                         <li class=" dropdown"><a> About </a>
                             <ul>
                                 <li><a href="{% url 'about:about_sipchem' %}">About Sipchem</a></li>
-                                <li><a href="{% url 'about:affiliates' %}">Affiliates</a></li>
-                                <li><a href="{% url 'about:leadership' %}">Leadership</a></li>
+                                {% comment %} <li><a href="{% url 'about:affiliates' %}">Affiliates</a></li>
+                                <li><a href="{% url 'about:leadership' %}">Leadership</a></li> {% endcomment %}
                             </ul>
                         </li>
 
@@ -127,8 +127,8 @@
                         <li class="dropdown"><a>Sustainability</a>
                             <ul>
                                 <li><a href="{% url 'sustainability:esg_environment' %}">ESG</a></li>
-                                <li><a href="{% url 'sustainability:csr' %}">CSR</a></li>
-                                <li><a href="{% url 'sustainability:sustainability_reports' %}">Sustainability Reports</a></li>
+                                {% comment %} <li><a href="{% url 'sustainability:csr' %}">CSR</a></li>
+                                <li><a href="{% url 'sustainability:sustainability_reports' %}">Sustainability Reports</a></li> {% endcomment %}
                                 <li><a href="{% url 'sustainability:certifications' %}">Certifications</a></li>
                                 <li><a href="{% url 'sustainability:certifications' %}">IMS Compliance</a></li>
 
@@ -195,7 +195,7 @@
                     <div class="col-lg-8 col-md-7 ml-auto">
                         <div class="row">
                         
-                            <div class="col-lg-4 col-md-4">
+                            {% comment %} <div class="col-lg-4 col-md-4">
                                 <div class="footer_widget">
                                     <h4 class="widget_title">Media Center</h4>
                                     <ul class="footer-menu">
@@ -204,23 +204,23 @@
                                     <li><a href="{% url 'journalist:journalist_registration' %}">Journalist Registration</a></li>
                                     </ul>
                                 </div>
-                            </div>
+                            </div> {% endcomment %}
                                     
-                            <div class="col-lg-4 col-md-4">
+                            <div class="col-lg-4 col-md-6">
                                 <div class="footer_widget">
                                     <h4 class="widget_title">Main Links</h4>
                                     <ul class="footer-menu" style="column-count: 2;">
                                     <li><a href="{% url 'home:home' %}">Home</a></li>
                                     <li><a href="About.html">About </a></li>
                                     <li><a href="{% url 'suppliers:subliers' %}"> Suppliers </a></li>
-                                    <li><a href="{% url 'sustainability:esg_environment' %}"> Sustainability </a></li>
+                                    {% comment %} <li><a href="{% url 'sustainability:esg_environment' %}"> Sustainability </a></li> {% endcomment %}
                                     <li><a href="Digital_Transformation.html"> Innovation  </a></li>
                                     <li><a href="{% url 'contact:contact'  %}"> Contact Us  </a></li>
                                     </ul>
                                 </div>
                             </div>
                     
-                            <div class="col-lg-4 col-md-4">
+                            <div class="col-lg-4 col-md-6">
                                 <div class="footer_widget">
                                     <h4 class="widget_title">Terms & policy</h4>
                                     <ul class="footer-menu">
@@ -324,7 +324,6 @@
                                     <button class="theme-btn btn-style-one" style="display: block;margin: auto" type="submit" name="submit-form"><span class="btn-title">Send Message</span></button>
                                 </div>
                     </div>
-                
                 </form>
             </div>
         </div>
