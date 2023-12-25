@@ -50,7 +50,7 @@
                         <li class="current"><a href="{% url 'home:home' %}"> Home </a>
                         <li class="dropdown"><a> About </a>
                             <ul>
-                                <li><a href="About.html">About Sipchem</a></li>
+                                <li><a href="{% url 'about:about_sipchem' %}">About Sipchem</a></li>
                                 <li><a href="{% url 'about:affiliates' %}">Affiliates</a></li>
                                 <li><a href="{% url 'about:leadership' %}">Leadership</a></li>
                             </ul>
@@ -147,11 +147,7 @@
                         </nav>
                         <!-- Main Menu End-->
 
-                        <div class="outer-box clearfix">
-                           
-                            <!-- Btn box -->
-                            <div class="btn-box no-touch"><button class="nav-toggler"><span></span></button></div>
-                        </div>
+                        
 
                         <div class="outer-box clearfix">
                             <div class="language">

@@ -411,7 +411,33 @@ h1,h2,h3,h4,h5,h6 {
 
 
 
-
+@media(max-width:768px){
+    .sidenav-bar .navigation li.dropdown .dropdown-btn {
+        position: absolute;
+        left: 0px;
+        right: auto;
+    }
+    .about-me .info-column .inner-column {
+        left: 0;
+        right: 0;
+    }
+    .ProductsPage .product_info_tabs .prodcs_tabs .tab-btns .tab-btn {
+        margin: 0;
+    }
+    .ESGPage .LinksUrlUper ul li {
+        margin-right: 0;
+        margin-left: 0;
+    }
+    .SustainabilityReports .SustainabilityItem a span {
+        font-size: 20px;
+    }
+    .certifications .certifItem a span {
+        font-size: 20px;
+    }
+    .CaresSectionn .imageCareers {
+        margin-top: 35px;
+    }
+}
 
 
 
