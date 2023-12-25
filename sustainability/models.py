@@ -33,7 +33,7 @@ class Tabs(models.Model):
     title=models.CharField(max_length=50)
     title_ar=models.CharField(max_length=50)
     #many to many relationship
-    tab = models.ManyToManyField(Tab)
+    tab = models.ManyToManyField(Tab,null=True,blank=True)
     def __str__(self):
         return self.title    
 
@@ -90,7 +90,7 @@ class Governance_section_one(models.Model):
     title_ar=models.CharField(max_length=50)
     description = models.TextField()
     description_ar = models.TextField()
-    pdf=models.ManyToManyField(files)
+    pdf=models.ManyToManyField(files,null=True,blank=True)
     image=models.FileField(upload_to='images/')
     def __str__(self):
         return self.title
@@ -117,7 +117,7 @@ class statistics(models.Model):
 class Crs_section_two(models.Model):
     title=models.CharField(max_length=50)
     title_ar=models.CharField(max_length=50)
-    statistics=models.ManyToManyField(statistics)
+    statistics=models.ManyToManyField(statistics,null=True,blank=True)
     def __str__(self):
         return self.title
     
@@ -130,7 +130,7 @@ class descriptions(models.Model):
 class Crs_section_three(models.Model):
     title=models.CharField(max_length=50)
     title_ar=models.CharField(max_length=50)
-    description=models.ManyToManyField(descriptions)
+    description=models.ManyToManyField(descriptions,null=True,blank=True)
     def __str__(self):
         return self.title
     
