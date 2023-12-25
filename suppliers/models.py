@@ -3,8 +3,8 @@ from django.db import models
 # Create your models here.
 
 class Section_one(models.Model):
-    title = models.CharField(max_length=50)
-    title_ar = models.CharField(max_length=50)
+    title = models.CharField(max_length=500)
+    title_ar = models.CharField(max_length=500)
     description = models.TextField(null=True,blank=True)
     description_ar = models.TextField(null=True,blank=True)
     image = models.FileField(upload_to='careers/',null=True,blank=True)
@@ -22,8 +22,8 @@ class Reports(models.Model):
   
 
 class Section_two(models.Model):
-    title = models.CharField(max_length=50)
-    title_ar = models.CharField(max_length=50)
+    title = models.CharField(max_length=500)
+    title_ar = models.CharField(max_length=500)
     description = models.TextField(null=True,blank=True)
     description_ar = models.TextField(null=True,blank=True)
     reports=models.ManyToManyField(Reports,null=True,blank=True)

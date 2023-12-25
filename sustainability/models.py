@@ -14,24 +14,24 @@ class Envronmental_section_one(models.Model):
         return self.description
     
 class Envronmental_section_two(models.Model):
-    title = models.CharField(max_length=50)
-    title_ar = models.CharField(max_length=50)
+    title = models.CharField(max_length=500)
+    title_ar = models.CharField(max_length=500)
     description = models.TextField()
     description_ar = models.TextField()
     def __str__(self):
         return self.title
     
 class Tab(models.Model):
-    title=models.CharField(max_length=50)
-    title_ar=models.CharField(max_length=50)
+    title=models.CharField(max_length=500)
+    title_ar=models.CharField(max_length=500)
     description=models.TextField()
     description_ar=models.TextField()
     def __str__(self):
         return self.title
     
 class Tabs(models.Model):
-    title=models.CharField(max_length=50)
-    title_ar=models.CharField(max_length=50)
+    title=models.CharField(max_length=500)
+    title_ar=models.CharField(max_length=500)
     #many to many relationship
     tab = models.ManyToManyField(Tab,null=True,blank=True)
     def __str__(self):
@@ -52,16 +52,16 @@ class Envronmental(models.Model):
 
 class Social_section_one(models.Model):
     image = models.FileField(upload_to='images/')
-    title=models.CharField(max_length=50)
-    title_ar=models.CharField(max_length=50)
+    title=models.CharField(max_length=500)
+    title_ar=models.CharField(max_length=500)
     description = models.TextField()
     description_ar = models.TextField()
     def __str__(self):
         return self.title
     
 class Social_section_two(models.Model):
-    title = models.CharField(max_length=50)
-    title_ar = models.CharField(max_length=50)
+    title = models.CharField(max_length=500)
+    title_ar = models.CharField(max_length=500)
     description = models.TextField()
     description_ar = models.TextField()
     def __str__(self):
@@ -78,16 +78,16 @@ class Social(models.Model):
 
 #pdf
 class files(models.Model):
-    title=models.CharField(max_length=50)
-    title_ar=models.CharField(max_length=50)
+    title=models.CharField(max_length=500)
+    title_ar=models.CharField(max_length=500)
     pdf = models.FileField(upload_to='pdf/')
     def __str__(self):
         return self.pdf.name
 
 
 class Governance_section_one(models.Model):
-    title=models.CharField(max_length=50)
-    title_ar=models.CharField(max_length=50)
+    title=models.CharField(max_length=500)
+    title_ar=models.CharField(max_length=500)
     description = models.TextField()
     description_ar = models.TextField()
     pdf=models.ManyToManyField(files,null=True,blank=True)
@@ -98,8 +98,8 @@ class Governance_section_one(models.Model):
     
 #crs models
 class Crs_section_one(models.Model):
-    title=models.CharField(max_length=50)
-    title_ar=models.CharField(max_length=50)
+    title=models.CharField(max_length=500)
+    title_ar=models.CharField(max_length=500)
     description = models.TextField()
     description_ar = models.TextField()
     url=models.URLField()
@@ -107,16 +107,16 @@ class Crs_section_one(models.Model):
         return self.title
     
 class statistics(models.Model):
-    title=models.CharField(max_length=50)
-    title_ar=models.CharField(max_length=50)
+    title=models.CharField(max_length=500)
+    title_ar=models.CharField(max_length=500)
     number=models.IntegerField()
-    symbol=models.CharField(max_length=50)
+    symbol=models.CharField(max_length=500)
     def __str__(self):
         return self.title
     
 class Crs_section_two(models.Model):
-    title=models.CharField(max_length=50)
-    title_ar=models.CharField(max_length=50)
+    title=models.CharField(max_length=500)
+    title_ar=models.CharField(max_length=500)
     statistics=models.ManyToManyField(statistics,null=True,blank=True)
     def __str__(self):
         return self.title
@@ -128,15 +128,15 @@ class descriptions(models.Model):
         return f'description : ' + str(self.id)
     
 class Crs_section_three(models.Model):
-    title=models.CharField(max_length=50)
-    title_ar=models.CharField(max_length=50)
+    title=models.CharField(max_length=500)
+    title_ar=models.CharField(max_length=500)
     description=models.ManyToManyField(descriptions,null=True,blank=True)
     def __str__(self):
         return self.title
     
 class Crs_section_four(models.Model):
-    title=models.CharField(max_length=50)
-    title_ar=models.CharField(max_length=50)
+    title=models.CharField(max_length=500)
+    title_ar=models.CharField(max_length=500)
     description=models.TextField()
     description_ar=models.TextField()
     image=models.FileField(upload_to='images/')
