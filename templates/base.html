@@ -48,18 +48,12 @@
                 <nav class="side-nav">
                     <ul class="navigation clearfix" id="nav">
                         <li class="current"><a href="{% url 'home:home' %}"> Home </a>
-                        <li class="dropdown"><a> About </a>
-                            <ul>
-                                <li><a href="{% url 'about:about_sipchem' %}">About Sipchem</a></li>
-                                <li><a href="{% url 'about:affiliates' %}">Affiliates</a></li>
-                                <li><a href="{% url 'about:leadership' %}">Leadership</a></li>
-                            </ul>
-                        </li>
+                        <li><a href="{% url 'about:about_sipchem' %}">About</a></li>
 
                         <li class="dropdown"><a>Products</a>
                             <ul>
                                 {% for category in all_categories %}
-                                <li><a href="{% url 'products:products_by_category' category.id %}">{{category.title}} - {{category.id}}</a></li>
+                                <li><a href="{% url 'products:products_by_category' category.id %}">{{category.title}}</a></li>
                                 {% endfor %}
                             </ul>
                         </li>
@@ -67,8 +61,8 @@
                         <li class="dropdown"><a>Sustainability</a>
                             <ul>
                                 <li><a href="{% url 'sustainability:esg_environment' %}">ESG</a></li>
-                                <li><a href="{% url 'sustainability:csr' %}">CSR</a></li>
-                                <li><a href="{% url 'sustainability:sustainability_reports' %}">Sustainability Reports</a></li>
+                                {% comment %} <li><a href="{% url 'sustainability:csr' %}">CSR</a></li> {% endcomment %}
+                                {% comment %} <li><a href="{% url 'sustainability:sustainability_reports' %}">Sustainability Reports</a></li> {% endcomment %}
                                 <li><a href="{% url 'sustainability:certifications' %}">Certifications</a></li>
                                 <li><a href="{% url 'sustainability:certifications' %}">IMS Compliance</a></li>
 
@@ -108,18 +102,12 @@
                             <div class="collapse navbar-collapse clearfix" id="navbarSupportedContent">
                                 <ul class="navigation clearfix">
                                     <li class="current"><a href="{% url 'home:home' %}"> Home </a>
-                        <li class=" dropdown"><a> About </a>
-                            <ul>
-                                <li><a href="{% url 'about:about_sipchem' %}">About Sipchem</a></li>
-                                {% comment %} <li><a href="{% url 'about:affiliates' %}">Affiliates</a></li>
-                                <li><a href="{% url 'about:leadership' %}">Leadership</a></li> {% endcomment %}
-                            </ul>
-                        </li>
+                                <li><a href="{% url 'about:about_sipchem' %}">About</a></li>
 
                         <li class="dropdown"><a>Products</a>
                             <ul>
                                 {% for category in all_categories %}
-                                <li><a href="{% url 'products:products_by_category' category.id %}">{{category.title}} - {{category.id}}</a></li>
+                                <li><a href="{% url 'products:products_by_category' category.id %}">{{category.title}} </a></li>
                                 {% endfor %}
                             </ul>
                         </li>

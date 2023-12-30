@@ -168,25 +168,19 @@
                         </div>
                         <div class="ProductsItems">
                             <div class="row">
+                                
+                                
+                                {% for category in all_categories %}
                                 <div class="col-lg-6 z-one">
-                                    <a href="{% url 'products:products' %}" class="ProdItem d-flex justify-content-center product-btn first">
-                                        <div class="BGImage" style="background-image: url({% static 'images/new/product-btn-1.png' %})"></div>
-                                        
+                                    <a href="{% url 'products:products_by_category' category.id %}" class="ProdItem d-flex justify-content-center product-btn second">
+                                        <div class="BGImage" style="background-image: url({% if category.title == 'Polymers' %}{% static 'images/new/polymers_image.png' %}{% else %}{% static 'images/new/chemicals_image.png' %}{% endif %})"></div>
                                         <div class="ProdName">
-                                            <span>كيماويات</span>
+                                            <span>{{category.title_ar}}</span>
                                         </div>
                                         
                                     </a>
                                 </div>
-                                <div class="col-lg-6 z-one">
-                                    <a href="{% url 'products:products' %}" class="ProdItem d-flex justify-content-center product-btn second">
-                                        <div class="BGImage" style="background-image: url({% static 'images/new/Untitled_1.1.1.png' %})"></div>
-                                        <div class="ProdName">
-                                            <span>بوليمرات</span>
-                                        </div>
-                                        
-                                    </a>
-                                </div>
+                                {% endfor %}
                             </div>
                         </div>
                     </div>
@@ -199,7 +193,7 @@
                     <div class="auto-container">
 
                         <div class="sctiontititle">
-                            <h2 class="sub-title">INVESTORS</h2>
+                            <h2 class="sub-title">المستثمرين</h2>
                             <h1 class="main-title">{{investors.first.title_ar}}</h1>
                             <p>{{investors.first.description_ar}}</p>
                         </div>
@@ -233,7 +227,7 @@
                     <div class="overlaycint">
                         <div class="auto-container">
                             <div class="sctiontititle">
-                                <h2 class="sub-title">SUSTAINABILITY</h2>
+                                <h2 class="sub-title">الاستدامة</h2>
                                 <h1 class="main-title">{{sustainability.first.title_ar}}</h1>
                                 <p>{{sustainability.first.description_ar}}</p>
                             </div>

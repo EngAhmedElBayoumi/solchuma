@@ -85,7 +85,7 @@
 
                     <!-- SLIDER ITEM -->
                     <div class="banner-slider-item swiper-slide">
-                        <figure class="media-wrapper slide-inner"><img src="{{banner.image_or_video.url}}" alt=""></figure>
+                        <figure class="media-wrapper slide-inner"><img src="{{banner.image_or_video.url}}" style="height:100%" alt=""></figure>
                        
                         <div class="content-box">
                             <div class="content">
@@ -121,7 +121,7 @@
                         <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
                             <div class="sctiontititle">
                                 <h2 class="sub-title">STATISTICS</h2>
-                                <h1 class="main-title">Solchum in Numbers</h1>
+                                <h1 class="main-title">Solchuma in Numbers</h1>
                             </div>
                             <div class="statisticItems">
                                 <div class="row">
@@ -174,25 +174,17 @@
                         </div>
                         <div class="ProductsItems">
                             <div class="row">
+                                {% for category in all_categories %}
                                 <div class="col-lg-6 z-one">
-                                    <a href="{% url 'products:products' %}" class="ProdItem d-flex justify-content-center product-btn first">
-                                        <div class="BGImage" style="background-image: url({% static 'images/new/product-btn-1.png' %})"></div>
-                                        
+                                    <a href="{% url 'products:products_by_category' category.id %}" class="ProdItem d-flex justify-content-center product-btn second">
+                                        <div class="BGImage" style="background-image: url({% if category.title == 'Polymers' %}{% static 'images/new/polymers_image.png' %}{% else %}{% static 'images/new/chemicals_image.png' %}{% endif %})"></div>
                                         <div class="ProdName">
-                                            <span>CHEMICALS</span>
+                                            <span>{{category.title}}</span>
                                         </div>
                                         
                                     </a>
                                 </div>
-                                <div class="col-lg-6 z-one">
-                                    <a href="{% url 'products:products' %}" class="ProdItem d-flex justify-content-center product-btn second">
-                                        <div class="BGImage" style="background-image: url({% static 'images/new/Untitled_1.1.1.png' %})"></div>
-                                        <div class="ProdName">
-                                            <span>POLYMERS</span>
-                                        </div>
-                                        
-                                    </a>
-                                </div>
+                                {% endfor %}
                             </div>
                         </div>
                     </div>

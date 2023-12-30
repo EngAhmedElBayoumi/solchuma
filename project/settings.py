@@ -185,11 +185,8 @@ JAZZMIN_SETTINGS = {
         "auth.Group",
         "auth.User",
         #product
-        "products.Product_specification",
-        "products.Safety_data",
         "products.images",
         "products.category",
-        "products.sub_category",
         #suppliers
         "suppliers.Reports",
         #sustainability
