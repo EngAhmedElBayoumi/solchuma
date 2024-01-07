@@ -4,12 +4,11 @@ from .models import Product, Product_specification, Safety_data , images , categ
 
 #product display  title , category , sub_category
 class ProductAdmin(admin.ModelAdmin):
-    list_display = ('title', 'category', 'sub_category')
+    list_display = ('title', 'category', 'sub_category','description')
     list_filter = ('category', 'sub_category')
-    search_fields = ('title', 'category', 'sub_category')
+    search_fields = ('title',)
     ordering = ['title']
     
-
 
 admin.site.register(Product, ProductAdmin)
 admin.site.register(Product_specification)
