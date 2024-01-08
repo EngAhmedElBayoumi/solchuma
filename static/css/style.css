@@ -15987,6 +15987,18 @@ position: relative;
     display: block;
     width: 100%;
 }
+.banner-slider .swiper-slide{
+	height: 100vh !important;
+}
+.banner-slider-wrapper{
+	pointer-events: none;
+}
+.banner-slider-arrow.banner-slider-arrow--previous{
+	pointer-events: auto;
+}
+.banner-slider-arrow.banner-slider-arrow--next {
+	pointer-events: auto;
+}
 }
 
 
