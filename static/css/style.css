@@ -16002,6 +16002,12 @@ position: relative;
 .statiscSection .overlay{
 	padding-left: 50px;
 }
+.header-style-two .logo img{
+	height: 40px;
+}
+.banner-slider-arrows {
+	bottom: 50px !important;
+}
 }
 
 
