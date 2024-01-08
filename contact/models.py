@@ -1,4 +1,6 @@
 from django.db import models
+#import rich text field
+from ckeditor.fields import RichTextField
 
 # Create your models here.
 
@@ -28,9 +30,16 @@ class contact(models.Model):
     phone = models.CharField(max_length=200)
     address = models.CharField(max_length=200)
     address_ar = models.CharField(max_length=200)
+    locaction = models.CharField(max_length=200, null=True, blank=True)
+    website = models.CharField(max_length=200, null=True, blank=True)
     def __str__(self):
         return self.title
     
+    
+
+    
+    
+
 # contact message information name , email , phone , conuntry code , message type , subject , message
 class contact_message(models.Model):
     name = models.CharField(max_length=200)
