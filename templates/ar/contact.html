@@ -160,7 +160,7 @@
                                         </div>
                                         <div class="infoItem my-3">
                                             <img src="{% static 'images/new/phone-icon.svg' %}" alt="phone-icon">
-                                            <a href="tel:+123 13 801 9392">{{contact.phone}}</a>
+                                            <a dir="ltr" href="tel:+123 13 801 9392">{{contact.phone}}</a>
                                         </div>
                                         {% if contact.website %}
                                         <div class="infoItem my-3">
@@ -170,7 +170,7 @@
                                         {% endif %}
                                         <div class="infoItem my-3">
                                             <img src="{% static 'images/new/location.svg' %}" alt="main-icon">
-                                            <a dir="ltr" href="{{contact.locaction}}" target="_blank">
+                                            <a href="{{contact.locaction}}" target="_blank">
                                                 <span>{{contact.address_ar}}</span>
                                             </a>
                                         </div>
