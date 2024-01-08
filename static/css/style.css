@@ -15704,11 +15704,16 @@ position: relative;
 
 
 
-
+.mt--50px{
+	margin-top: -50px;
+}
 
 
 
 @media(max-width:768px){
+	.mt--50px{
+		margin-top: 0px;
+	}
 	.statiscSection .overlay{
 		padding-left: 15px;
 		padding-right: 15px;
