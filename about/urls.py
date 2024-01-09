@@ -6,9 +6,9 @@ app_name = 'about'
 
 urlpatterns = [
     #About Sipchem en
-    path('en/about_sipchem', views.about, name='about_sipchem'),
+    path('en/about_solchema', views.about, name='about_solchema'),
     #About Sipchem ar
-    path('ar/about_sipchem', views.about_ar, name='about_sipchem_ar'),
+    path('ar/about_solchema', views.about_ar, name='about_solchema_ar'),
     #Leadership en
     path('en/leadership', views.leadership, name='leadership'),
     #Leadership ar

@@ -41,8 +41,8 @@ class Tabs(models.Model):
     
 class Envronmental(models.Model):
     section_one = models.ForeignKey(Envronmental_section_one, on_delete=models.CASCADE)
-    section_two = models.ForeignKey(Envronmental_section_two, on_delete=models.CASCADE)
-    tabs = models.ForeignKey(Tabs, on_delete=models.CASCADE)
+    section_two = models.ForeignKey(Envronmental_section_two, null=True,blank=True, on_delete=models.CASCADE)
+    tabs = models.ForeignKey(Tabs, null=True,blank=True, on_delete=models.CASCADE)
     def __str__(self):
        # return f'environmental' + {self.id}'
         return f'environmental : ' + str(self.id)
