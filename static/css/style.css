@@ -15690,7 +15690,20 @@ position: relative;
 }
 
 
+.IframeLocations{
 
+}
+.IframeLocations .locatioIfraItem{
+	display: block;
+    width: 100%;
+    height: 400px;
+	margin: 15px 0;
+}
+.IframeLocations .locatioIfraItem iframe{
+	display: block;
+    width: 100%;
+    height: 100%;
+}
 
 
 
