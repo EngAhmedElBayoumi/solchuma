@@ -405,7 +405,17 @@ h1,h2,h3,h4,h5,h6 {
 .CareersSection .career-cards span{
     left: 60px;
 }
-
+.ProductsPage .product_info_tabs .prodcs_tabs .tab-btns .tab-btn {
+    display: inline-block;
+    width: max-content;
+    padding: 15px;
+    margin-right: 0;
+    color: #cbcbcb;
+    font-size: 18px;
+    font-weight: 400;
+    margin-bottom: -1px;
+    cursor: pointer;
+}
 
 
 

@@ -14497,9 +14497,9 @@ select.form-control option {
 	display: inline-block;
 	width: max-content;
 	padding: 15px;
-	margin-right: 15px;
+	margin-right: 5px;
 	color: #cbcbcb;
-	font-size: 24px;
+	font-size: 20px;
 	font-weight: 500;
 	margin-bottom: -1px;
 	cursor: pointer;
